@@ -2,8 +2,8 @@
 import 'dotenv/config';
 const rpc = process.env.RPC;
 import mcswapMarket from "mcswap-market";
+import "mcswap-market/mcswap-market.css";
 (async()=>{
-
     // start a new mcswapMarket instance
     const marketplace = new mcswapMarket({
         rpc: process.env.RPC,
@@ -40,6 +40,5 @@ import mcswapMarket from "mcswap-market";
 
         }]
     });
-
 })();
 // ****************************************************
