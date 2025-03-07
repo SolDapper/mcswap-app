@@ -8,7 +8,7 @@ import "mcswap-market/mcswap-market.css";
     const marketplace = new mcswapMarket({
         rpc: process.env.RPC,
         logo: "https://pbs.twimg.com/profile_images/1861054417828560896/KderzjmK_400x400.jpg",
-        enable_new_listings: true,
+        enable_new_listings: false,
         enable_edit_theme: false,
         default_theme: "Dark",
         enable_edit_sort: false,
