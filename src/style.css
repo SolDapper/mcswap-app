@@ -7,3 +7,66 @@ html, body{
 body{
     padding: 20px 18px 20px 18px;
 }
+button, input, select, textarea{
+    font-family: "Ubuntu";
+}
+button:focus, input:focus, select:focus, textarea:focus{
+    outline: none;
+    text-shadow: none;
+}
+a, button, input, select, img{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+#mcswap-dapp-nav{
+    width: 100%;
+    padding: 0;
+    background: #111;
+    border-radius: 10px;
+    border: 1px solid #000;
+    margin: 0 0 18px 0;
+}
+#mcswap-dapp-nav-box{
+    width: calc(100% - 32px);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #222;
+    height: 42px;
+}
+#mcswap-dapp-logo{
+    border: 1px solid #1f1f1f;
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    margin: -5px 0 0 -5px;
+}
+
+.connect_3_button, .disconnect_3_button{
+    cursor: pointer;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    background: #154ab3;
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    height: 40px;
+    width: 115px;
+    margin: 0 -1px 0 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    transition: 0.3s;
+    float: right;
+}
+.connect_3_button:hover, .disconnect_3_button:hover{
+    background: #fff;
+    color: #000;
+    text-shadow: none;
+}
+.connect_3_button:disabled, .disconnect_3_button:disabled{
+    opacity: 0.25;
+    cursor: default;
+}
+.disconnect_3_button{
+    display: none;
+}
