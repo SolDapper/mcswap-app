@@ -18,6 +18,7 @@
     "crypto-browserify": "^3.12.1",
     "dotenv": "^16.4.7",
     "events": "^3.3.0",
+    "import": "^0.0.6",
     "jquery": "^3.7.1",
     "mcswap-market": "^0.0.9-dev",
     "mcswap-sdk": "^0.4.4",

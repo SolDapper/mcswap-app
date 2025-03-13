@@ -7,6 +7,7 @@ import marketplace from "../plugin/mcswap-market";
 import "../plugin/mcswap-market.css";
 import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css";
+import 'animate.css';
 import 'dotenv/config';
 const rpc = process.env.RPC;
 let provider = false;
@@ -18,7 +19,7 @@ let provider = false;
     market.init({
       rpc: rpc,
       id: "demo-market",
-      name: "McSwap Market",
+      name: "McSwap",
       default_priority: "Low",
       default_display: "Collections Only",
       default_sort: "Newest First",
@@ -80,6 +81,23 @@ function toast(message,wait,error=false){
         onClick: function(){} // Callback after click
     }).showToast();
 }
+//*****************************************************
+
+//*****************************************************
+// intro
+setTimeout(function(){
+  $("#intro-1").removeClass("animate__flipInY").addClass("animate__zoomOut");
+  $("#intro-2").show();
+  setTimeout(function(){
+    $("#intro-2").removeClass("animate__flipInY").addClass("animate__zoomOut");
+    $("#intro-3").show();
+    setTimeout(function(){
+      $("#intro-3").removeClass("animate__flipInY").addClass("animate__zoomOut");
+      $("#intro").fadeOut(800);
+      $("body").css({"overflow":"auto"});
+    },2400);
+  },1800);
+},1800);
 //*****************************************************
 
 //*****************************************************
