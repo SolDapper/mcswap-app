@@ -2,7 +2,7 @@ html, body{
     margin: 0;
     padding: 0;
     height: auto;
-    background: #0c265b;
+    background: #12367f;
 }
 body{
     padding: 20px 18px 20px 18px;
@@ -41,6 +41,12 @@ a, button, input, select, img{
     margin: -5px 0 0 -5px;
 }
 
+.mcswap-market{
+    margin-bottom: 18px;
+    overflow: auto;
+    border-radius: 10px;
+}
+
 .connect_3_button, .disconnect_3_button{
     cursor: pointer;
     color: #fff;
@@ -51,7 +57,7 @@ a, button, input, select, img{
     outline: none;
     height: 40px;
     width: 115px;
-    margin: 0 -1px 0 0;
+    margin: 1px -1px 0 0;
     padding: 0;
     font-weight: bold;
     display: block;
@@ -61,7 +67,8 @@ a, button, input, select, img{
 .connect_3_button:hover, .disconnect_3_button:hover{
     background: #fff;
     color: #000;
-    text-shadow: none;
+    text-shadow: 0 0 20px #154ab3;
+    box-shadow: 0 0 10px 3px #154ab3;
 }
 .connect_3_button:disabled, .disconnect_3_button:disabled{
     opacity: 0.25;

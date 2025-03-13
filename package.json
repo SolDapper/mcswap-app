@@ -20,6 +20,7 @@
     "events": "^3.3.0",
     "jquery": "^3.7.1",
     "mcswap-market": "^0.0.9-dev",
+    "mcswap-sdk": "^0.4.2",
     "os-browserify": "^0.3.0",
     "parcel": "^2.13.3",
     "parcel-plugin-static-files-copy": "^2.6.0",

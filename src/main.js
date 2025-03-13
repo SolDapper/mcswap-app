@@ -1,92 +1,132 @@
 // ****************************************************
 'use strict';
 import $ from "jquery";
-import mcswapMarket from "mcswap-market";
-import "mcswap-market/mcswap-market.css";
+// import mcswapMarket from "mcswap-market";
+// import "mcswap-market/mcswap-market.css";
+import mcswapMarket from "../plugin/mcswap-market";
+import "../plugin/mcswap-market.css";
+import Toastify from 'toastify-js';
+import "toastify-js/src/toastify.css";
 import 'dotenv/config';
 const rpc = process.env.RPC;
 let provider = false;
 // ****************************************************
 
-
-
 // ****************************************************
 (async()=>{
-    // start a new mcswapMarket instance
-    const marketplace = new mcswapMarket({
-        rpc: process.env.RPC,
-        logo: "https://pbs.twimg.com/profile_images/1827444138700054528/esOO7O4K_400x400.png",
-        // logo: "https://pbs.twimg.com/profile_images/1861054417828560896/KderzjmK_400x400.jpg",
-        enable_new_listings: false,
-        enable_edit_theme: false,
-        default_theme: "Dark",
-        enable_edit_sort: false,
-        default_sort: "Name A > Z",
-        enable_edit_display: false,
-        default_display: "My Listings",
-        enable_edit_core: false,
-        core_display: false,
-        enable_edit_nft: false,
-        nft_display: false,
-        enable_edit_pnft: false,
-        pnft_display: false,
-        enable_edit_cnft: false,
-        cnft_display: true,
-        fee_create: 0.0009,
-        fee_execute: 0.0009,
-        default_priority: "Low",
-        treasury: "ACgZcmgmAnMDxXxZUo9Zwg2PS6WQLXy63JnnLmJFYxZZ",
-        collections: "ACy3ZVXcch8mZXUtRVqsJfa2DhFHxnUJpBb4oeN9tZsX",
-        sellers: "7Z3LJB2rxV4LiRBwgwTcufAWxnFTVJpcoCMiCo8Z5Ere,2jcih7dUFmEQfMUXQQnL2Fkq9zMqj4jwpHqvRVe3gGLL",
-        enable_edit_sellers: false,
-        enable_edit_collections: false,
-    });
-    // initialize the marketplace
-    await marketplace.init({
-        name: "McSwap Market",
-        id: "mcswap-market",
-        styles:[{
 
-        }]
+    // initialize the marketplace
+    // const marketplace_1 = new mcswapMarket();
+    // marketplace_1.init({
+    //   rpc: rpc,
+    //   id: "mcswap-market",
+    //   name: "McSwap Market",
+    //   text_intro: "Initializing Market",
+    //   text_buy: "Buy Now",
+    //   logo: "https://pbs.twimg.com/profile_images/1827444138700054528/esOO7O4K_400x400.png",
+    //   enable_new_listings: false,
+    //   enable_edit_sort: false,
+    //   default_sort: "Shuffle",
+    //   enable_edit_display: false,
+    //   default_display: "All Listings",
+    //   enable_edit_core: false,
+    //   core_display: false,
+    //   enable_edit_nft: false,
+    //   nft_display: false,
+    //   enable_edit_pnft: false,
+    //   pnft_display: false,
+    //   enable_edit_cnft: false,
+    //   cnft_display: true,
+    //   fee_create: 0,
+    //   fee_execute: 0,
+    //   default_priority: "Low",
+    //   // treasury: "ACgZcmgmAnMDxXxZUo9Zwg2PS6WQLXy63JnnLmJFYxZZ",
+    //   collections: "ACy3ZVXcch8mZXUtRVqsJfa2DhFHxnUJpBb4oeN9tZsX,BL8ocmGmaEiM73JYjAAhgAmHPbtuY3CThYem9g4N5PqQ,BTJPWLW7DLQWpm2TNNEByAM5a1E1AGJp4h43czo9YBLc,Cq2BNRoE5RqyqSmACDQLx4ivp3MgmePwd2mdroZ5hmom,H3mnaqNFFNwqRfEiWFsRTgprCvG4tYFfmNezGEVnaMuQ",
+    //   sellers: "7Z3LJB2rxV4LiRBwgwTcufAWxnFTVJpcoCMiCo8Z5Ere,2jcih7dUFmEQfMUXQQnL2Fkq9zMqj4jwpHqvRVe3gGLL",
+    //   enable_edit_sellers: false,
+    //   enable_edit_collections: false,
+    //   master_settings: true
+    // });
+
+    const marketplace = new mcswapMarket();
+    marketplace.init({
+      rpc: rpc,
+      id: "demo-market",
+      name: "McSwap Market",
+      default_priority: "Low",
+      default_display: "Collections Only",
+      default_sort: "Newest First",
+      text_intro: "Initializing Demo",
+      text_buy: "Buy Me",
+      logo: "https://pbs.twimg.com/profile_images/1827444138700054528/esOO7O4K_400x400.png",
+      logo_link: "https://x.com/SolDapper",
+      enable_new_listings: true,
+      enable_edit_sort: true,
+      enable_edit_display: true,
+      enable_edit_core: true,
+      core_display: true,
+      enable_edit_nft: true,
+      nft_display: true,
+      enable_edit_pnft: true,
+      pnft_display: true,
+      enable_edit_cnft: true,
+      cnft_display: true,
+      fee_create: 0,
+      fee_execute: 0,
+      treasury: "ACgZcmgmAnMDxXxZUo9Zwg2PS6WQLXy63JnnLmJFYxZZ",
+      collections: "ACy3ZVXcch8mZXUtRVqsJfa2DhFHxnUJpBb4oeN9tZsX,BL8ocmGmaEiM73JYjAAhgAmHPbtuY3CThYem9g4N5PqQ,BTJPWLW7DLQWpm2TNNEByAM5a1E1AGJp4h43czo9YBLc,Cq2BNRoE5RqyqSmACDQLx4ivp3MgmePwd2mdroZ5hmom,H3mnaqNFFNwqRfEiWFsRTgprCvG4tYFfmNezGEVnaMuQ",
+      sellers: "7Z3LJB2rxV4LiRBwgwTcufAWxnFTVJpcoCMiCo8Z5Ere,2jcih7dUFmEQfMUXQQnL2Fkq9zMqj4jwpHqvRVe3gGLL",
+      enable_edit_sellers: true,
+      enable_edit_collections: true,
+      master_settings: true
     });
+
 })();
 // ****************************************************
 
-
-
 // ****************************************************
-async function connected(){
-    console.log("connected");
-}
-async function disconnected(){
-    console.log("disconnected");
-}
+
 // ****************************************************
 
 //*****************************************************
-function connect_3_cover_fadeIn(el, time) {
-    el.style.opacity = 0;
-    var last = +new Date();
-    var tik = function() {
-      el.style.opacity = +el.style.opacity + (new Date() - last) / time;
-      last = +new Date();
-      if (+el.style.opacity < 0.75) {
-        (window.requestAnimationFrame && requestAnimationFrame(tik)) || setTimeout(tik, 16);
+  // toast
+  function toast(message,wait,error=false){
+      let color = "#111";
+      let background = "#fff";
+      if(error===true){
+          color = "#111";
+          background = "#fff"
       }
-    };
-    tik();
+      else{
+          color = "#111";
+          background = "#fff";
+      }
+      Toastify({
+          text: message,
+          duration: wait,
+          newWindow: false,
+          close: false,
+          gravity: "bottom", // `top` or `bottom`
+          position: "left", // `left`, `center` or `right`
+          stopOnFocus: false, // Prevents dismissing of toast on hover
+          style: {
+              "font-weight": "bold",
+              "font-family": "Ubuntu",
+              "border-radius": "10px",
+              "color": color,
+              "background": background,
+          },
+          onClick: function(){} // Callback after click
+      }).showToast();
   }
-  function connect_3_fadeIn(el, time) {
-    el.style.opacity = 0;
-    var last = +new Date();
-    var tik = function() {
-      el.style.opacity = +el.style.opacity + (new Date() - last) / time;
-      last = +new Date();
-      if (+el.style.opacity < 1) {
-        (window.requestAnimationFrame && requestAnimationFrame(tik)) || setTimeout(tik, 16);
-      }
-    };
-    tik();
+  async function mcswapConnected(){
+    toast("Connected", 2000);
+  }
+  async function mcswapDisconnected(){
+    toast("Disconnected", 2000);
+    $(".mcswap-item").removeClass("active");
+    $(".mcswap-details-buy").prop("disabled", false);
+    $(".mcswap-details-delist").prop("disabled", false).hide();
   }
   function isInAppBrowser(_wallet_) {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -103,15 +143,25 @@ function connect_3_cover_fadeIn(el, time) {
   function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   }
-  document.querySelectorAll('.connect_3_button').forEach(function(el){
-    el.addEventListener('click', function() {
-      const connect_3_cover = document.getElementById("connect_3_cover");
-      const connect_3_chooser = document.getElementById("connect_3_chooser");  
-      connect_3_cover.style.display = "block";
-      connect_3_chooser.style.display = "block";
+  const wallet_provider = () => {
+    const isBackpackInstalled = window.backpack && window.backpack.isBackpack;
+    const isSolflareInstalled = window.solflare && window.solflare.isSolflare;
+    const isPhantomInstalled = window.solana && window.solana.isPhantom;
+    if (isBackpackInstalled && connect_3 == "backpack") {
+      return window.backpack;
+    }
+    else if (isSolflareInstalled && connect_3 == "solflare") {
+      return window.solflare;
+    } 
+    else if (isPhantomInstalled && connect_3 == "phantom") {
+      return window.solana;
+    }
+  }
+  $('.connect_3_button').on('click', function() {
       const isPhantomInstalled = window.solana && window.solana.isPhantom;
       const isSolflareInstalled = window.solflare && window.solflare.isSolflare;
       const isBackpackInstalled = window.backpack && window.backpack.isBackpack;
+      $("#connect_3_cover, #connect_3_chooser").fadeIn(300);
       if(isInAppBrowser("Phantom")===true){
         $("#connect_3_phantom").attr("disabled", false);
       }
@@ -137,45 +187,22 @@ function connect_3_cover_fadeIn(el, time) {
         $("#connect_3_solflare").attr("disabled", false);
         $("#connect_3_backpack").attr("disabled", false);
       }
-      connect_3_cover_fadeIn(connect_3_cover, 400);
-      connect_3_fadeIn(connect_3_chooser, 400);
-    });
   });
-  const wallet_provider = () => {
-    const isBackpackInstalled = window.backpack && window.backpack.isBackpack;
-    const isSolflareInstalled = window.solflare && window.solflare.isSolflare;
-    const isPhantomInstalled = window.solana && window.solana.isPhantom;
-    if (isBackpackInstalled && connect_3 == "backpack") {
-      return window.backpack;
-    }
-    else if (isSolflareInstalled && connect_3 == "solflare") {
-      return window.solflare;
-    } 
-    else if (isPhantomInstalled && connect_3 == "phantom") {
-      return window.solana;
-    }
-  }
-  document.querySelectorAll('.connect_3_choice').forEach(function(el){
-    el.addEventListener('click', function() {
-    if(this.id == "connect_3_cancel"){
-      let connect_3_cover = document.getElementById("connect_3_cover");
-      let connect_3_chooser = document.getElementById("connect_3_chooser");  
-      connect_3_cover.style.display = "none";
-      connect_3_chooser.style.display = "none";
-      connect_3_cover.style.opacity = 0;
-      connect_3_chooser.style.opacity = 0;
+  $('.connect_3_choice').on('click', function() {
+    const id = $(this).attr("id");
+    if(id=="connect_3_cancel"){
+      toast("Disconnected", 2000);
+      $("#connect_3_message").html("");
+      $("#connect_3_cover, #connect_3_chooser").fadeOut(300);
       $("#connect_3_phantom, #connect_3_solflare, #connect_3_backpack").attr("disabled", true);
     }
     else{
-      connect_3_connect(this.id.replace("connect_3_",""));
+      connect_3_connect(id.replace("connect_3_",""));
     } 
-    });
   });
   async function connect_3_connect(provider_name){
       connect_3 = provider_name;
       provider = await wallet_provider();
-      let connect_3_cover = document.getElementById("connect_3_cover");
-      let connect_3_chooser = document.getElementById("connect_3_chooser");
       if (typeof provider == "undefined") {
         var app_link;
         if(connect_3=="solflare"){
@@ -192,58 +219,38 @@ function connect_3_cover_fadeIn(el, time) {
         a.href = app_link;
         document.body.appendChild(a);
         a.click(); a.remove();
-        connect_3_cover.style.display = "none";
-        connect_3_cover.style.opacity = 0;
-        connect_3_chooser.style.display = "none";
-        connect_3_chooser.style.opacity = 0;
-        document.getElementById("connect_3_message").innerHTML = "";
+        $("#connect_3_cover, #connect_3_chooser").fadeOut(300);
+        setTimeout(function(){$("#connect_3_message").html("");},500);
       }
       else {
         if (provider.isConnected === false) {
-          connect_3_chooser.style.display = "none";
-          connect_3_chooser.style.opacity = 0;
-          document.getElementById("connect_3_message").innerHTML = "Connecting Wallet...";
+          $("#connect_3_message").html("Connecting Wallet...");
           await provider.connect()
           .catch(function(err) {
-            connect_3_cover.style.display = "none";
-            connect_3_cover.style.opacity = 0;
-            document.getElementById("connect_3_message").innerHTML = "";
+            $("#connect_3_cover, #connect_3_chooser").fadeOut(300);
+            $("#connect_3_message").html("");
           });
         }
         if (provider.isConnected === true) {
-          document.querySelectorAll(".connect_3_button").forEach(function(el){
-            el.style.display = "none";
-          });
-          document.querySelectorAll(".disconnect_3_button").forEach(function(el){
-            el.style.display = "block";
-          });
-          connect_3_cover.style.display = "none";
-          connect_3_cover.style.opacity = 0;
-          connect_3_chooser.style.display = "none";
-          connect_3_chooser.style.opacity = 0;
-          document.getElementById("connect_3_message").innerHTML = "";
-          await connected();
+          $(".connect_3_button").hide();
+          $(".disconnect_3_button").hide().fadeIn(300);
+          $("#connect_3_cover, #connect_3_chooser").fadeOut(300);
+          setTimeout(function(){$("#connect_3_message").html("");},500);
+          await mcswapConnected();
         }
       }
   }
-  document.querySelectorAll('.disconnect_3_button').forEach(function(el){
-    el.addEventListener('click', async function() {
+  $('.disconnect_3_button').on('click', async function() {
       provider.disconnect();
-      document.querySelectorAll(".disconnect_3_button").forEach(function(el){
-        el.style.display = "none";
-      });
-      document.querySelectorAll(".connect_3_button").forEach(function(el){
-        el.style.display = "block";
-      });
-      await disconnected();
-    });
+      $(".disconnect_3_button").hide();
+      $(".connect_3_button").hide().fadeIn(300);
+      await mcswapDisconnected();
   });
   const connect_3_init = async () => {
     let connect_3_hash = window.location.hash;
     if(connect_3_hash.includes("#connect_3-")){
       history.replaceState(null, null, ' ');
       history.pushState("", "", "");
-  //     document.querySelector(".connect_3_button").click();
       setTimeout(() => {
         const connect_3_provider = connect_3_hash.replace("#connect_3-","");
         console.log("connect_3_provider", connect_3_provider);

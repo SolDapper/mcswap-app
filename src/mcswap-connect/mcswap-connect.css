@@ -6,7 +6,7 @@
   z-index: 1000;
   background: #222d07;
   background: #000;
-  opacity: 0.50;
+  opacity: 0.8;
   top: 0;
   left: 0;
 }
@@ -47,7 +47,6 @@
   z-index: 1001;
   background: #0a0a0a;
   padding: 17px 5px 0 5px;
-  opacity: 0;
   height: auto;
 }
 #connect_3_chooser button {
@@ -98,9 +97,9 @@ button.connect_3_choice span{
   display: inline-block;
   vertical-align: top;
   margin: 2px 0 0 98px;
-  font-size: 17px;
+  font-size: 15px;
   font-family: "Ubuntu";
-  font-weight: 400;
+  font-weight: bold;
   font-style: normal;
   line-height: 23px;
   height: 23px;
