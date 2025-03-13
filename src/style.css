@@ -2,7 +2,8 @@ html, body{
     margin: 0;
     padding: 0;
     height: auto;
-    background: #12367f;
+    background: #111;
+    /* background: #12367f; */
 }
 body{
     padding: 20px 18px 20px 18px;

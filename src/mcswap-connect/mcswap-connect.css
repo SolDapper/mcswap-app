@@ -31,12 +31,6 @@
       opacity: 0.25;
  }
 }
-#connect, #disconnect {
-  font-size: 23px;
-  font-family: "Ubuntu";
-  font-weight: 400;
-  font-style: normal;
-}
 #connect_3_chooser {
   border-radius: 34px;
   width: 290px;
