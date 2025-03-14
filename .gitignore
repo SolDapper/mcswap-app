@@ -1,7 +1,6 @@
 *package-lock.json
 *test.js
 *.env
-*plugin
 # Logs
 logs
 *.log
