@@ -1,7 +1,7 @@
 // ****************************************************
 'use strict';
 import $ from "jquery";
-// import mcswapMarket from "mcswap-shop";
+// import shop from "mcswap-shop";
 // import "mcswap-market/mcswap-shop.css";
 import shop from "../plugin/mcswap-shop";
 import "../plugin/mcswap-shop.css";
