@@ -1,10 +1,10 @@
 // ****************************************************
 'use strict';
 import $ from "jquery";
-// import mcswapMarket from "mcswap-market";
-// import "mcswap-market/mcswap-market.css";
-import marketplace from "../plugin/mcswap-market";
-import "../plugin/mcswap-market.css";
+// import mcswapMarket from "mcswap-shop";
+// import "mcswap-market/mcswap-shop.css";
+import shop from "../plugin/mcswap-shop";
+import "../plugin/mcswap-shop.css";
 import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css";
 import 'animate.css';
@@ -15,11 +15,11 @@ let provider = false;
 
 // ****************************************************
 (async()=>{
-    const market = new marketplace();
-    market.init({
+    const store = new shop();
+    store.init({
       rpc: rpc,
       id: "demo-market",
-      name: "McSwap",
+      name: "McSwap Shop",
       default_priority: "Low",
       default_display: "Collections Only",
       default_sort: "Newest First",
@@ -103,10 +103,10 @@ setTimeout(function(){
 //*****************************************************
 // connector
 async function mcswapConnected(){
-  toast("Connected", 2000);
+  toast("Connected!", 2000);
 }
 async function mcswapDisconnected(){
-  toast("Disconnected", 2000);
+  toast("Disconnected!", 2000);
   $(".mcswap-item").removeClass("active");
   $(".mcswap-details-buy").prop("disabled", false);
   $(".mcswap-details-delist").prop("disabled", false).hide();
@@ -174,7 +174,7 @@ $('.connect_3_button').on('click', function() {
 $('.connect_3_choice').on('click', function() {
   const id = $(this).attr("id");
   if(id=="connect_3_cancel"){
-    toast("Disconnected", 2000);
+    toast("Disconnected!", 2000);
     $("#connect_3_message").html("");
     $("#connect_3_cover, #connect_3_chooser").fadeOut(300);
     $("#connect_3_phantom, #connect_3_solflare, #connect_3_backpack").attr("disabled", true);
