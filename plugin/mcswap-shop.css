@@ -1128,6 +1128,7 @@ button#mcswap-preview-collection-value:hover{
         display: block;
         width: 100%;
         margin-top: 10px;
+        margin-left: -12px;
     }
     .mcswap-header ul li.mcswap-name .mcswap-name-span{
         font-size: 20px;
