@@ -472,10 +472,11 @@ class shop {
                                 if(tx.logs.includes("Program log: CERROR: Invalid token fee amount")){
                                     toast("Not Enough "+symbol+"!", 4000, true);
                                 }
-                                else if(tx.logs.includes("Program log: Invalid fee amount")){
+                                else if(tx.logs.includes("Program log: CERROR: Invalid fee amount")){
                                     toast("Not Enough SOL!", 4000, true);
                                 }
                                 else{
+                                    console.log(tx.logs);
                                     toast("Unknown Error!", 4000, true);
                                 }
                                 $("#"+_data_.id+" .mcswap-item").removeClass("active");

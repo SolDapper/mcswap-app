@@ -39,9 +39,11 @@ class mcswapConnector {
         $("#mcswap_message").html("");
     }
     this.disconnect=async()=>{
-      window.provider.disconnect();
-      window.provider = false;
-      this.disconnected();
+      if(window.provider){
+        window.provider.disconnect();
+        window.provider = false;
+        this.disconnected();
+      }
     }
     this.disconnected=async()=>{
       this.toast("Disconnected!", 2000);
