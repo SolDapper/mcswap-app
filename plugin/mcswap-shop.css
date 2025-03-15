@@ -1126,7 +1126,7 @@ button#mcswap-preview-collection-value:hover{
     }
     .mcswap-listings ul.mcswap-item li.mcswap-details{
         display: block;
-        width: 100%;
+        width: calc(100% + 12px);
         margin-top: 10px;
         margin-left: -12px;
     }
