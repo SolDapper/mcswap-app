@@ -72,9 +72,8 @@ a, button, input, select, img{
     border-radius: 6px;
     margin: -5px 0 0 -5px;
 }
-
 .mcswap-market{
-    margin-bottom: 18px;
+    margin-bottom: 0;
     overflow: auto;
     border-radius: 10px;
 }
