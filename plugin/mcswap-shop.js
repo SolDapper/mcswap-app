@@ -303,7 +303,7 @@ class shop {
                 return response;
             }
             async function backcheck(array,backchecker,firstload){  
-                const provider = new mcswapConnector(_data_.wallets).provider();
+                const provider = window.provider;
                 if(array.length==0 && backchecker===true){
                     $("#"+_data_.id+" .mcswap-items").hide();
                     $("#"+_data_.id+" .mcswap-item").remove();
@@ -431,7 +431,7 @@ class shop {
                     });
                     // buy now links
                     $("#"+_data_.id+" .mcswap-details-buy").on("click", async function(){
-                        const provider = new mcswapConnector().provider();
+                        const provider = window.provider;
                         if(provider && provider.isConnected && provider.isConnected===true){
                             $(this).parent().parent().addClass("active");
                             $("#"+_data_.id+" .mcswap-details-buy").prop("disabled", true);
@@ -476,7 +476,6 @@ class shop {
                                     toast("Not Enough SOL!", 4000, true);
                                 }
                                 else{
-                                    console.log(tx.logs);
                                     toast("Unknown Error!", 4000, true);
                                 }
                                 $("#"+_data_.id+" .mcswap-item").removeClass("active");
@@ -539,7 +538,7 @@ class shop {
                     });
                     // delist links
                     $("#"+_data_.id+" .mcswap-details-delist").on("click", async function(){
-                        const provider = new mcswapConnector().provider();
+                        const provider = window.provider;
                         if(provider && provider.isConnected && provider.isConnected === true){
                             $(this).parent().parent().addClass("active");
                             $("#"+_data_.id+" .mcswap-details-buy").prop("disabled", true);
@@ -1443,8 +1442,8 @@ class shop {
             let token_address = $("#"+default_settings.id+" .token-address").val().trim();
             if(token_address.length>0){token_address = $("#"+default_settings.id+" .token-address").val().trim();}
             else{token_address=false;}
-            const provider = new mcswapConnector(default_settings.wallets).provider();
-            if(provider==false){toast("Connect Wallet!", 2000, true);return;}
+            const provider = window.provider;
+            if(!provider){toast("Connect Wallet!", 2000, true);return;}
             const seller = provider.publicKey.toString();
             const owner = $("#"+default_settings.id+" .mcswap-floater").data("owner");
             const standard = $("#"+default_settings.id+" .mcswap-floater").data("standard");
