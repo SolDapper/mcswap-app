@@ -22,7 +22,7 @@ connector.init();
       id: "demo-market",
       name: "McSwap Shop",
       default_priority: "Low",
-      default_display: "Collections Only",
+      default_display: "All Listings",
       default_sort: "Newest First",
       text_intro: "Initializing Demo",
       text_buy: "Buy Me",
