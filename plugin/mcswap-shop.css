@@ -70,7 +70,6 @@
 .mcswap-wrapper button:disabled:hover{
     background: #154ab3;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
     text-shadow: none;
     box-shadow: none;
 }
@@ -240,7 +239,7 @@ li.control-li-list input.mint-address:disabled{
 li.control-li-list button.mcswap-list-it{
     cursor: pointer;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: none;
     background: #154ab3;
     border: 0;
     border-radius: 20px;
@@ -268,7 +267,6 @@ li.control-li-list button.mcswap-list-it:disabled{
 li.control-li-list button.mcswap-list-it:disabled:hover{
     background: #154ab3;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
     text-shadow: none;
     box-shadow: none;
 }
@@ -279,7 +277,7 @@ li.control-li-list button.mcswap-list-cancel{
     display: none;
     cursor: pointer;
     color: #fff;
-    text-shadow: 1px 1px 1px #111;
+    text-shadow: none;
     background: #154ab3;
     border: 0;
     border-radius: 20px;
@@ -306,7 +304,6 @@ li.control-li-list button.mcswap-list-cancel:disabled{
 li.control-li-list button.mcswap-list-cancel:disabled:hover{
     background: #154ab3;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
     text-shadow: none;
     box-shadow: none;
 }
@@ -374,7 +371,7 @@ li.control-li-list input.sol-amount:disabled{
 li.control-li-list button.mcswap-create-it{
     cursor: pointer;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: none;
     background: #154ab3;
     border: 0;
     border-radius: 20px;
@@ -401,7 +398,6 @@ li.control-li-list button.mcswap-create-it:disabled{
 li.control-li-list button.mcswap-create-it:disabled:hover{
     background: #154ab3;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
     text-shadow: none;
     box-shadow: none;
 }
@@ -409,7 +405,7 @@ li.control-li-list button.mcswap-create-it:disabled:hover{
 li.control-li-sellers button.mcswap-update-it{
     cursor: pointer;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: none;
     background: #154ab3;
     border: 0;
     border-radius: 20px;
@@ -436,7 +432,6 @@ li.control-li-sellers button.mcswap-update-it:disabled{
 li.control-li-sellers button.mcswap-update-it:disabled:hover{
     background: #154ab3;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
     text-shadow: none;
     box-shadow: none;
 }
@@ -444,7 +439,7 @@ li.control-li-sellers button.mcswap-update-it:disabled:hover{
 li.control-li-collections button.mcswap-update-collections{
     cursor: pointer;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: none;
     background: #154ab3;
     border: 0;
     border-radius: 20px;
@@ -471,7 +466,6 @@ li.control-li-collections button.mcswap-update-collections:disabled{
 li.control-li-collections button.mcswap-update-collections:disabled:hover{
     background: #154ab3;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
     text-shadow: none;
     box-shadow: none;
 }
@@ -520,7 +514,7 @@ li.control-li-preferences select:disabled{
 li.control-li-preferences button.mcswap-save-settings{
     cursor: pointer;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: none;
     background: #154ab3;
     border: 0;
     border-radius: 20px;
@@ -547,7 +541,6 @@ li.control-li-preferences button.mcswap-save-settings:disabled{
 li.control-li-preferences button.mcswap-save-settings:disabled:hover{
     background: #154ab3;
     color: #fff;
-    text-shadow: 1px 1px 1px #000;
     text-shadow: none;
     box-shadow: none;
 }
@@ -825,7 +818,7 @@ li.control-li-preferences span.mcswap-standard-error{
     font-weight: bold;
     margin: 19px 0 0 0;
     transition: 0.3s;
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: none;
 }
 .mcswap-details-buy:hover, .mcswap-details-delist:hover{
     background: #fff;
@@ -981,7 +974,7 @@ button#mcswap-preview-collection-value:hover{
     font-weight: bold;
     margin: 19px 0 0 0;
     transition: 0.3s;
-    text-shadow: 1px 1px 1px #111;
+    text-shadow: none;
     vertical-align: top;
     width: 142px;
 }
@@ -1167,7 +1160,7 @@ button#mcswap-preview-collection-value:hover{
 @media only screen and (max-width: 500px) {
     .mcswap-header ul li.mcswap-name .mcswap-name-span{
         font-size: 15px;
-        margin-top: 0;
+        margin-top: -1px;
     }
     .mcswap-header ul li.mcswap-name .mcswap-host{
         margin-top: -13px;
