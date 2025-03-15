@@ -78,34 +78,3 @@ a, button, input, select, img{
     overflow: auto;
     border-radius: 10px;
 }
-
-.connect_3_button, .disconnect_3_button{
-    cursor: pointer;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    background: #154ab3;
-    border: 0;
-    border-radius: 20px;
-    outline: none;
-    height: 40px;
-    width: 115px;
-    margin: 1px -1px 0 0;
-    padding: 0;
-    font-weight: bold;
-    display: block;
-    transition: 0.3s;
-    float: right;
-}
-.connect_3_button:hover, .disconnect_3_button:hover{
-    background: #fff;
-    color: #000;
-    text-shadow: 0 0 20px #154ab3;
-    box-shadow: 0 0 10px 3px #154ab3;
-}
-.connect_3_button:disabled, .disconnect_3_button:disabled{
-    opacity: 0.25;
-    cursor: default;
-}
-.disconnect_3_button{
-    display: none;
-}
