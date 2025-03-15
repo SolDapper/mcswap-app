@@ -22,12 +22,16 @@ class mcswapConnector {
             $("#mcswap_message").html("");
           }).then(()=>{
             if(window.provider.isConnected===true){
+              window.provider.on("accountChanged",async(publicKey)=>{
+                this.disconnect(wallet.id);
+              });
               this.connected();
             }
+            else{
+              this.disconnect();
+            }
           });
-          window.provider.on("accountChanged",async(publicKey)=>{
-              $(".mcswap_disconnect_button").first().click();
-          });
+          return;
         }
       }
     }
@@ -38,15 +42,24 @@ class mcswapConnector {
         $("#mcswap_cover, #mcswap_chooser").fadeOut(300);
         $("#mcswap_message").html("");
     }
-    this.disconnect=async()=>{
+    this.disconnect=async(change=false)=>{
       if(window.provider){
-        window.provider.disconnect();
-        window.provider = false;
+        window.provider.removeAllListeners();
+        await window.provider.disconnect();
+        if(_wallets_.includes(change)){
+          this.connect(change);
+        }
+        else{
+          window.provider = false;
+          this.toast("Disconnected!", 2000);
+          this.disconnected();
+        }
+      }
+      else{
         this.disconnected();
       }
     }
     this.disconnected=async()=>{
-      this.toast("Disconnected!", 2000);
       $(".mcswap_disconnect_button").hide();
       $(".mcswap_connect_button").show();
       $(".mcswap-item").removeClass("active");
@@ -55,7 +68,7 @@ class mcswapConnector {
     }
     this.init=async()=>{
       // ********************************************
-      const connector = '<div id="mcswap_connector"><div id="mcswap_cover"><div id="mcswap_message"></div></div><div id="mcswap_chooser"></div></div>';
+      const connector = '<div id="mcswap_connector"><div id="mcswap_cover"><div id="mcswap_message"></div></div><div id="mcswap_chooser"></div><input id="mcswap-account-change" value="" /></div>';
       $("body").append(connector);
       for(let i=0;i<this.wallets.length;i++){
         const wallet = this.wallets[i];
