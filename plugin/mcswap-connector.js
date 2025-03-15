@@ -68,6 +68,7 @@ class mcswapConnector {
         for(let i=0;i<this.wallets.length;i++){
           const wallet = this.wallets[i];
           const isinapp = await wallet.inapp(await this.agent());
+          alert(wallet.id+" "+isinapp);
           if(isinapp===true){
             inapp=wallet.id;
           }
