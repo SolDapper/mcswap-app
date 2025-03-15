@@ -36,7 +36,7 @@
   width: 290px;
   position: fixed;
   display: none;
-  top: calc(50% - 140px);
+  top: calc(50% - 135px);
   left: calc(50% - 150px);
   z-index: 1001;
   background: #0a0a0a;
@@ -145,4 +145,10 @@
 }
 .mcswap_disconnect_button{
   display: none;
+}
+@media only screen and (max-width: 310px) {
+  #mcswap_chooser{
+    width: calc(100% - 20px);
+    left: 5px;
+  }
 }

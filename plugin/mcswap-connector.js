@@ -34,7 +34,6 @@ class mcswapConnector {
         setTimeout(()=>{$("#mcswap_message").html("");},500);
         this.connected();
       });
-      
     }
     this.connected=async()=>{
         this.toast("Connected!", 2000);
@@ -56,8 +55,6 @@ class mcswapConnector {
     }
     this.init=async()=>{
       // ********************************************
-      // if(!localStorage.getItem('mcswap-user')){localStorage.setItem('mcswap-user',false);}
-      // ********************************************
       const connector = '<div id="mcswap_connector"><div id="mcswap_cover"><div id="mcswap_message"></div></div><div id="mcswap_chooser"></div></div>';
       $("body").append(connector);
       for(let i=0;i<this.wallets.length;i++){
@@ -67,13 +64,23 @@ class mcswapConnector {
       }
       $("#mcswap_chooser").append('<button class="mcswap_choice" id="mcswap_cancel"><img src="'+this.cancel+'" /><span>Cancel</span></button>');
       // ********************************************
-      if(await this.mobile()===true){
+      const ismobile = await this.mobile();
+      if(ismobile===true){
         let inapp = false;
         for(let i=0;i<this.wallets.length;i++){
           const wallet = this.wallets[i];
-          inapp = await wallet.inapp(await this.agent());
-          if(inapp===true){$("#mcswap_"+wallet.id).attr("disabled",false);}
-          else{$("#mcswap_"+wallet.id).attr("disabled",true);}
+          const isinapp = await wallet.inapp(await this.agent());
+          if(isinapp===true){inapp=wallet.id;}
+          if(i==(this.wallets.length-1)){
+            if(inapp!=false){
+              $(".mcswap_wallet_choice").prop("disabled",true);
+              $("#mcswap_"+wallet.id).attr("disabled",false);
+            }
+            else{
+              $(".mcswap_wallet_choice ").addClass("deeplink");
+              $(".mcswap_choice").prop("disabled",false);
+            }
+          }
         }
       }
       else{
@@ -89,7 +96,17 @@ class mcswapConnector {
         }
       }
       // ********************************************
-      $(".mcswap_connect_button").on("click",()=>{$("#mcswap_cover, #mcswap_chooser").fadeIn(300);});
+      $(window).on('resize', function() {
+        let chooserHeight = $('#mcswap_chooser').outerHeight();
+        const half = chooserHeight/2;
+        $("#mcswap_chooser").css({"top":"calc(50% - "+half+"px)"});
+      });
+      $(".mcswap_connect_button").on("click",()=>{
+        let chooserHeight = $('#mcswap_chooser').outerHeight();
+        const half = chooserHeight/2;
+        $("#mcswap_chooser").css({"top":"calc(50% - "+half+"px)"});
+        $("#mcswap_cover, #mcswap_chooser").fadeIn(300);
+      });
       // ********************************************
       $('button.mcswap_choice').on('click',async(e)=>{
           const button = $(e.currentTarget);
@@ -99,7 +116,29 @@ class mcswapConnector {
             $("#mcswap_cover, #mcswap_chooser").fadeOut(300);
           }
           else{
-            await this.connect(id.replace("mcswap_",""));
+            const deeplink = $("#"+id).hasClass("deeplink");
+            let link = false;
+            const walletId = id.replace("mcswap_","");
+            if(deeplink===true){
+              for(let i=0;i<this.wallets.length;i++){
+                const wallet = this.wallets[i];
+                if(wallet.id==walletId){
+                  link=wallet.link;
+                }
+                if(i==(this.wallets.length-1)){
+                  let a = document.createElement('a');
+                  a.id = "mcswap_deep";
+                  a.href = link;
+                  document.body.appendChild(a);
+                  $("#mcswap_cover, #mcswap_chooser").hide();
+                  a.click(); a.remove();
+                }
+              }
+            }
+            else{
+              
+              await this.connect(walletId);
+            }
           } 
       });
       // ********************************************

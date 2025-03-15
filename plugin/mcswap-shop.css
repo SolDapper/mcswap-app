@@ -18,13 +18,13 @@
     padding: 0;
 }
 #mcswap-cover-close{
-    width: 33px;
-    height: 33px;
+    width: 30px;
+    height: 30px;
     display: none;
     position: absolute;
     float: right;
-    top: 15px;
-    right: 15px;
+    top: 16px;
+    right: 16px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -130,6 +130,8 @@
     margin-top: -7px;
     margin-left: 2px;
     line-height: 100%;
+    overflow: hidden;
+    text-wrap: nowrap;
 }
 
 .mcswap-header ul li.mcswap-settings{
@@ -1153,10 +1155,19 @@ button#mcswap-preview-collection-value:hover{
     }
 }
 
+@media only screen and (max-width: 520px) {
+    #mcswap-lightbox {
+        top: 22%;
+        left: 2.5%;
+        width: 95%;
+        height: auto;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     .mcswap-header ul li.mcswap-name .mcswap-name-span{
         font-size: 15px;
-        margin-top: 1px;
+        margin-top: 0;
     }
     .mcswap-header ul li.mcswap-name .mcswap-host{
         margin-top: -13px;
