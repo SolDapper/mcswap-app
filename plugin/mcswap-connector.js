@@ -78,7 +78,6 @@ class mcswapConnector {
               $("#mcswap_"+wallet.id).attr("disabled",false);
             }
             else{
-              $("#mcswap_chooser").prepend("deeplink");
               $(".mcswap_wallet_choice ").addClass("deeplink");
               $(".mcswap_choice").prop("disabled",false);
             }
