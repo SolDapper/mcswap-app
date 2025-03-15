@@ -431,7 +431,7 @@ class shop {
                     });
                     // buy now links
                     $("#"+_data_.id+" .mcswap-details-buy").on("click", async function(){
-                        const provider = new mcswapConnector(_data_.wallets).provider();
+                        const provider = new mcswapConnector().provider();
                         if(provider && provider.isConnected && provider.isConnected===true){
                             $(this).parent().parent().addClass("active");
                             $("#"+_data_.id+" .mcswap-details-buy").prop("disabled", true);
@@ -538,7 +538,7 @@ class shop {
                     });
                     // delist links
                     $("#"+_data_.id+" .mcswap-details-delist").on("click", async function(){
-                        const provider = new mcswapConnector(_data_.wallets).provider();
+                        const provider = new mcswapConnector().provider();
                         if(provider && provider.isConnected && provider.isConnected === true){
                             $(this).parent().parent().addClass("active");
                             $("#"+_data_.id+" .mcswap-details-buy").prop("disabled", true);
@@ -677,9 +677,9 @@ class shop {
             await displayer(items,true,false);
         }
     }
-    async start(_data_){ 
+    async start(_data_,miliseconds){ 
         this.checker = setInterval(async function(){
-            const provider = new mcswapConnector(_data_.wallets).provider();
+            const provider = window.provider;
             if(provider && provider.isConnected && provider.isConnected === true){
                 $("#"+_data_.id+" .mcswap-item").each(function(){
                     if(provider.publicKey.toString()==$(this).data("seller")){
@@ -707,7 +707,7 @@ class shop {
                 $("#"+_data_.id+" .mcswap-details-delist").hide();
                 $("#"+_data_.id+" .mcswap-details-buy").prop("disabled", false);
             }
-        }, 1000);
+        }, miliseconds);
     }
     async stop(){ 
         this.checker = clearInterval(this.checker);
@@ -1554,7 +1554,7 @@ class shop {
             if(isMobile()===true){e.preventDefault();copy($(this).attr("href"));}
         });
 
-        await this.start(default_settings);
+        await this.start(default_settings,1000);
 
         result.status = "ok";
         result.message = "mcswap shop initialized";

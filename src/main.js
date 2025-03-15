@@ -9,7 +9,7 @@ import "toastify-js/src/toastify.css";
 import 'animate.css';
 import 'dotenv/config';
 const rpc = process.env.RPC;
-const wallets = ["phantom","solflare","backpack"];
+const wallets = ["phantom","backpack","solflare"];
 const connector = new mcswapConnector(wallets);
 connector.init();
 // ****************************************************
@@ -18,7 +18,7 @@ connector.init();
     const store = new shop();
     store.init({
       rpc: rpc,
-      wallets: ["phantom","solflare","backpack"], // phantom, solflare, backpack
+      wallets: ["phantom","backpack","solflare"], // phantom, backpack, solflare
       id: "demo-market",
       name: "McSwap Shop",
       default_priority: "Low",
