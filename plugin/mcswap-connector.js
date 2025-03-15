@@ -119,6 +119,7 @@ class mcswapConnector {
             let link = false;
             const walletId = id.replace("mcswap_","");
             if(deeplink===true){
+              alert("had deeplink");
               for(let i=0;i<this.wallets.length;i++){
                 const wallet = this.wallets[i];
                 if(wallet.id==walletId){
@@ -135,7 +136,6 @@ class mcswapConnector {
               }
             }
             else{
-              
               await this.connect(walletId);
             }
           } 
