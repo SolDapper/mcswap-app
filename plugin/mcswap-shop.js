@@ -302,7 +302,7 @@ class shop {
                 }
                 return response;
             }
-            async function backcheck(rpc,array,backchecker,firstload,styles=false,styler=false){  
+            async function backcheck(rpc,array,backchecker,firstload,styles=false){  
                 const provider = window.mcswap;
                 if(array.length==0 && backchecker===true){
                     $("#"+_data_.id+" .mcswap-items").hide();
@@ -311,7 +311,20 @@ class shop {
                     $("#"+_data_.id+" .mcswap-refresh-button").removeClass("mcswap-rotating");
                     return "ok";
                 }
-                if(styles){await styler(_data_.id,styles);}
+                if(styles){
+                    if(styles.titles){
+                        const titles = styles.titles;
+                        $("#"+_data_.id+" .mcswap-listings ul.mcswap-item .mcswap-details-name").css(titles);
+                    }
+                    if(styles.details){
+                        const details = styles.details;
+                        $("#"+_data_.id+" .mcswap-details-amount, #"+_data_.id+" .mcswap-details-amount-2").css(details);
+                    }
+                    if(styles.labels){
+                        const labels = styles.labels;
+                        $("#"+_data_.id+" .control-ul label").css(labels);
+                    }
+                }
                 if($("#"+_data_.id+" .mcswap-item").length>0){
                     let accts = [];
                     if(array.length>0){for(let a=0;a<array.length;a++){
@@ -372,11 +385,11 @@ class shop {
                 }
             }
             if(items.length==0 && backchecker===true){
-                await backcheck(rpc,items,true,firstload,_data_.shop_styler,styler);
+                await backcheck(rpc,items,true,firstload,_data_.shop_styler);
                 return;
             }
             if(items.length==0 && firstload===true){
-                await backcheck(rpc,items,false,firstload,_data_.shop_styler,styler);
+                await backcheck(rpc,items,false,firstload,_data_.shop_styler);
                 return;
             }
             for(let i=0;i<items.length;i++){
@@ -417,7 +430,7 @@ class shop {
                     $("#"+_data_.id+" ul[data-id='"+prior+"']").after(ele);
                 }
                 if(i==(items.length-1)){
-                    await backcheck(rpc,items,backchecker,firstload,_data_.shop_styler,styler);
+                    await backcheck(rpc,items,backchecker,firstload,_data_.shop_styler);
                     // mint links
                     $("#"+_data_.id+" .mint-link").on("click", async function(e){if(isMobile()===true){e.preventDefault();copy($(this).data("mint"));}});
                     // explore links
