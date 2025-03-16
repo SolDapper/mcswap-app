@@ -81,9 +81,8 @@ const styler = {
 // ****************************************************
 // mcswap shop
 import shop from "../plugin/mcswap-shop";
-import "../plugin/color/orange-shop.css";
-// import "../plugin/color/red-shop.css";
-import "../plugin/color/orange-connector.css";
+import "../plugin/color/green-shop.css";
+import "../plugin/color/green-connector.css";
 (async()=>{
     const myshop = new shop(process.env.RPC,wallets);
     myshop.init({

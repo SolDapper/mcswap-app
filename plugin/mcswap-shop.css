@@ -257,10 +257,10 @@ li.control-li-list button.mcswap-list-it{
     border: 0;
     border-radius: 20px;
     outline: none;
-    max-height: 40px;
+    max-height: 41px;
     width: 100px;
     margin: 0 0 0 12px;
-    padding: 13px 0 13px 0;
+    padding: 13px 0 14px 0;
     font-weight: bold;
     transition: all .3s;
     display: inline-block;
@@ -388,10 +388,10 @@ li.control-li-list button.mcswap-create-it{
     border: 0;
     border-radius: 20px;
     outline: none;
-    max-height: 40px;
+    max-height: 41px;
     width: 132px;
     margin: 30px auto 24px auto;
-    padding: 13px 0 13px 0;
+    padding: 13px 0 14px 0;
     font-weight: bold;
     transition: all .3s;
     display: block;
@@ -421,10 +421,10 @@ li.control-li-sellers button.mcswap-update-it{
     border: 0;
     border-radius: 20px;
     outline: none;
-    max-height: 40px;
+    max-height: 41px;
     width: 132px;
     margin: 30px auto 24px auto;
-    padding: 13px 0 13px 0;
+    padding: 13px 0 14px 0;
     font-weight: bold;
     transition: all .3s;
     display: block;
@@ -454,10 +454,10 @@ li.control-li-collections button.mcswap-update-collections{
     border: 0;
     border-radius: 20px;
     outline: none;
-    max-height: 40px;
-    width: 160px;
+    max-height: 41px;
+    width: 150px;
     margin: 30px auto 24px auto;
-    padding: 13px 0 13px 0;
+    padding: 13px 0 14px 0;
     font-weight: bold;
     transition: all .3s;
     display: block;
@@ -481,7 +481,7 @@ li.control-li-collections button.mcswap-update-collections:disabled:hover{
 
 .mcswap-controls ul.control-ul li.control-li-preferences{
     padding: 15px 15px 15px 15px;
-    width: calc(50% - 50px);
+    width: calc(50% - 50.5px);
     border-right: 1px solid #000;
     border-bottom: 1px solid #000;
     min-height: 352px;
@@ -530,12 +530,12 @@ li.control-li-preferences button.mcswap-save-settings{
     outline: none;
     width: 132px;
     margin: 30px auto 24px auto;
-    padding: 13px 0 13px 0;
+    padding: 13px 0 14px 0;;
     font-weight: bold;
     transition: all .3s;
     display: block;
     transition: 0.3s;
-    max-height: 40px;
+    max-height: 41px;
 }
 li.control-li-preferences button.mcswap-save-settings:hover{
     background: #fff;
