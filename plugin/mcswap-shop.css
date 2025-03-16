@@ -1103,7 +1103,7 @@ button#mcswap-preview-collection-value:hover{
 @media only screen and (min-width: 1580px) {
     .mcswap-listings ul.mcswap-item{
         display: inline-block;
-        width: calc(33.333% - 40px);
+        width: calc(33.35% - 40px);
         border-left: 1px solid #222;
         border-right: 1px solid #000;
     }
