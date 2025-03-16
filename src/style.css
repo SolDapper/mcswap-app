@@ -4,7 +4,7 @@ html, body{
     height: auto;
 }
 body{
-    padding: 20px 18px 20px 18px;
+    padding: 19px 16px 19px 16px;
     overflow: hidden;
 }
 button, input, select, textarea{
@@ -55,7 +55,7 @@ a, button, input, select, img{
     margin: 0 0 18px 0;
 }
 #mcswap-dapp-nav-box{
-    width: calc(100% - 32px);
+    width: calc(100% - 30px);
     padding: 15px;
     border-radius: 10px;
     height: 42px;
