@@ -1,24 +1,37 @@
 // ****************************************************
 'use strict';
 import $ from "jquery";
-// import shop from "mcswap-shop";
-import mcswapConnector from "../plugin/mcswap-connector.js";
-import shop from "../plugin/mcswap-shop";
-import Toastify from 'toastify-js';
-import "toastify-js/src/toastify.css";
 import 'animate.css';
+
 import 'dotenv/config';
-const rpc = process.env.RPC;
-const wallets = ["phantom","backpack","solflare"];
-const connector = new mcswapConnector(wallets);
-connector.init();
+
 // ****************************************************
 // mcswap shop
+import EventEmitter from 'events';
+const emitter = new EventEmitter();
+emitter.on('connected',()=>{
+  $("#mcswap_cover, #mcswap_chooser").fadeOut(300);
+  $("#mcswap_message").html("");
+});
+emitter.on('disconnected',()=>{
+  $(".mcswap-item").removeClass("active");
+  $(".mcswap-details-buy").prop("disabled", false);
+  $(".mcswap-details-delist").prop("disabled", false).hide();
+});
+import mcswapConnector from "../plugin/mcswap-connector.js";
+const _wallets_ = process.env.WALLETS;
+const wallets = _wallets_.split(",");
+const connector = new mcswapConnector(wallets,emitter);
+connector.init();
+
+// ****************************************************
+// mcswap shop
+import shop from "../plugin/mcswap-shop";
+import "../plugin/color/orange-shop.css";
+import "../plugin/color/orange-connector.css";
 (async()=>{
-    const store = new shop();
-    store.init({
-      rpc: rpc,
-      wallets: ["phantom","backpack","solflare"], // phantom, backpack, solflare
+    const myshop = new shop(process.env.RPC,wallets);
+    myshop.init({
       id: "demo-market",
       name: "McSwap Shop",
       default_priority: "Low",
@@ -46,41 +59,35 @@ connector.init();
       sellers: "7Z3LJB2rxV4LiRBwgwTcufAWxnFTVJpcoCMiCo8Z5Ere,2jcih7dUFmEQfMUXQQnL2Fkq9zMqj4jwpHqvRVe3gGLL",
       enable_edit_sellers: true,
       enable_edit_collections: true,
-      master_settings: true
+      master_settings: true,
+      collections_display: true,
+      sellers_display: true,
+      shop_styler: {
+        shop:{
+          "background": "#1a1a1a",
+          "background-repeat": "no-repeat",
+          "background-size": "cover",
+          "background-position": "center"
+        },
+        wrapper:{
+          // "background": "#000000eb"
+        },
+        header:{
+          "color": "#fff"
+        },
+        titles:{
+          "color": "#fff"
+        },
+        details:{
+          "color": "#1367d4",
+        },
+        labels:{
+          "color": "#1367d4",
+        }
+
+      }
     });
 })();
-
-//*****************************************************
-// toast
-function toast(message,wait,error=false){
-    let color = "#111";
-    let background = "#fff";
-    if(error===true){
-        color = "#111";
-        background = "#fff"
-    }
-    else{
-        color = "#111";
-        background = "#fff";
-    }
-    Toastify({
-        text: message,
-        duration: wait,
-        newWindow: false,
-        close: false,
-        gravity: "bottom", // `top` or `bottom`
-        position: "left", // `left`, `center` or `right`
-        stopOnFocus: false, // Prevents dismissing of toast on hover
-        style: {
-            "font-weight": "bold",
-            "font-family": "Ubuntu",
-            "border-radius": "10px",
-            "color": color,
-            "background": background,
-        },
-        onClick: function(){} // Callback after click
-    }).showToast();
-}
 
 //*****************************************************
 // intro

@@ -2,8 +2,6 @@ html, body{
     margin: 0;
     padding: 0;
     height: auto;
-    background: #111;
-    /* background: #12367f; */
 }
 body{
     padding: 20px 18px 20px 18px;
@@ -53,26 +51,23 @@ a, button, input, select, img{
 #mcswap-dapp-nav{
     width: 100%;
     padding: 0;
-    background: #111;
     border-radius: 10px;
-    border: 1px solid #000;
     margin: 0 0 18px 0;
 }
 #mcswap-dapp-nav-box{
     width: calc(100% - 32px);
     padding: 15px;
     border-radius: 10px;
-    border: 1px solid #222;
     height: 42px;
+    background: #1a1a1a;
 }
 #mcswap-dapp-logo{
-    border: 1px solid #1f1f1f;
-    width: 50px;
-    height: 50px;
-    border-radius: 6px;
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
     margin: -5px 0 0 -5px;
 }
-.mcswap-market{
+.mcswap-shop{
     margin-bottom: 0;
     overflow: auto;
     border-radius: 10px;

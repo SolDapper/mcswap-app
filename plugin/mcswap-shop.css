@@ -1,16 +1,31 @@
+.toastify{
+    font-size: 14px;
+}
+.blur-wrapper{
+    position: absolute;
+    float: left;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
 .mcswap-wrapper{
-    border-radius: 10px;
-    border: 1px solid #000;
-    background: #111;
+    border-radius: 8px;
+    /* border: 1px solid #000; */
     font-family: "Ubuntu";
 }
+.mcswap-wrapper-light{
+    color: #111;
+}
+.mcswap-wrapper-dark{
+    color: #fff;
+}
 #mcswap-cover{
+    background: #000000b6;
     display: none;
     position: fixed;
     float: left;
     top: 0;
     left: 0;
-    background: #000000b6;
     height: 100%;
     width: 100%;
     z-index: 5000;
@@ -75,9 +90,8 @@
 }
 
 .mcswap-header{
-    border-radius: 10px 10px 0 0;
-    border: 1px solid #222;
-    border-bottom: 1px solid #000;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #222;
     height: 90px;
     margin: 0;
     padding: 0;
@@ -104,10 +118,9 @@
     display: block;
     padding: 0;
     margin: 15px 0 0 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 6px;
-    border: 1px solid #1f1f1f;
+    width: 62px;
+    height: 62px;
+    border-radius: 8px;
     cursor: pointer;
 }
 .mcswap-header ul li.mcswap-name{
@@ -118,7 +131,7 @@
 
 .mcswap-header ul li.mcswap-name .mcswap-name-span{
     display: block;
-    line-height: 68px;
+    line-height: 70px;
     height: 67px;
 }
 
@@ -188,7 +201,7 @@
 
 .mcswap-controls{
     border-radius: 0 0 10px 10px;
-    border: 1px solid #222;
+    border-top: 1px solid #0a0a0a;
     margin: 0;
     padding: 0;
     display: none;
@@ -206,7 +219,7 @@
 }
 .mcswap-controls ul.control-ul li.control-li-list{
     padding: 15px 15px 15px 15px;
-    width: calc(50% - 50.5px);
+    width: calc(50% - 12px);
     border-left: 1px solid #222;
     border-bottom: 1px solid #000;
     min-height: 352px;
@@ -244,11 +257,10 @@ li.control-li-list button.mcswap-list-it{
     border: 0;
     border-radius: 20px;
     outline: none;
-    height: 40px;
-    line-height: 40px;
+    max-height: 40px;
     width: 100px;
     margin: 0 0 0 12px;
-    padding: 0;
+    padding: 13px 0 13px 0;
     font-weight: bold;
     transition: all .3s;
     display: inline-block;
@@ -376,11 +388,10 @@ li.control-li-list button.mcswap-create-it{
     border: 0;
     border-radius: 20px;
     outline: none;
-    height: 40px;
-    line-height: 40px;
+    max-height: 40px;
     width: 132px;
     margin: 30px auto 24px auto;
-    padding: 0;
+    padding: 13px 0 13px 0;
     font-weight: bold;
     transition: all .3s;
     display: block;
@@ -410,11 +421,10 @@ li.control-li-sellers button.mcswap-update-it{
     border: 0;
     border-radius: 20px;
     outline: none;
-    height: 40px;
-    line-height: 40px;
+    max-height: 40px;
     width: 132px;
     margin: 30px auto 24px auto;
-    padding: 0;
+    padding: 13px 0 13px 0;
     font-weight: bold;
     transition: all .3s;
     display: block;
@@ -444,11 +454,10 @@ li.control-li-collections button.mcswap-update-collections{
     border: 0;
     border-radius: 20px;
     outline: none;
-    height: 40px;
-    line-height: 40px;
+    max-height: 40px;
     width: 160px;
     margin: 30px auto 24px auto;
-    padding: 0;
+    padding: 13px 0 13px 0;
     font-weight: bold;
     transition: all .3s;
     display: block;
@@ -472,7 +481,7 @@ li.control-li-collections button.mcswap-update-collections:disabled:hover{
 
 .mcswap-controls ul.control-ul li.control-li-preferences{
     padding: 15px 15px 15px 15px;
-    width: calc(50% - 12px);
+    width: calc(50% - 50px);
     border-right: 1px solid #000;
     border-bottom: 1px solid #000;
     min-height: 352px;
@@ -519,15 +528,14 @@ li.control-li-preferences button.mcswap-save-settings{
     border: 0;
     border-radius: 20px;
     outline: none;
-    height: 40px;
-    line-height: 40px;
     width: 132px;
     margin: 30px auto 24px auto;
-    padding: 0;
+    padding: 13px 0 13px 0;
     font-weight: bold;
     transition: all .3s;
     display: block;
     transition: 0.3s;
+    max-height: 40px;
 }
 li.control-li-preferences button.mcswap-save-settings:hover{
     background: #fff;
@@ -697,15 +705,18 @@ li.control-li-preferences span.mcswap-standard-error{
 }
 
 .mcswap-listings{
-    border-radius: 0 0 10px 10px;
-    border: 1px solid #222;
+    border-radius: 0 0 8px 8px;
+    /* border: 1px solid #222; */
     margin: 0;
-    padding: 19px 18px 19px 18px;
+    padding: 0;
 }
 .mcswap-items{
-    border: 1px solid #000;
+    border: 1px solid #000000;
+    border-left: 0;
+    border-right: 0;
     border-bottom: 0;
     display: none;
+    overflow: hidden;
 }
 
 .mcswap-init{
@@ -728,8 +739,8 @@ li.control-li-preferences span.mcswap-standard-error{
     margin: 0;
     list-style-type: none;
     border: 1px solid #222;
-    border-bottom: 1px solid #000;
-    transition: 0.3s;
+    border-bottom: 1px solid #0a0a0a;
+    transition: 0.5s;
 }
 .mcswap-listings .mcswap-item-format{
     display: block;
@@ -800,7 +811,7 @@ li.control-li-preferences span.mcswap-standard-error{
     overflow: hidden;
 }
 .mcswap-details-symbol{
-    color: #565656;
+    color: #676767;
     font-size: 12px;
     font-weight: bold;
     margin-left: 3px;
@@ -1030,7 +1041,6 @@ button#mcswap-preview-collection-value:hover{
 
 .mcswap-create-fees{
     background: none;
-    color: #565656;
     font-size: 12px;
     width: 200px;
     float: right;
@@ -1039,10 +1049,12 @@ button#mcswap-preview-collection-value:hover{
     text-align: right;
     font-weight: bold;
 }
+.mcswap-create-fees-label{
+    color: #676767;
+}
 .mcswap-create-fees-value{
     text-align: right;
     margin-left: 16px;
-    color: #fff;
 }
 
 .mcswap-save-noti{
