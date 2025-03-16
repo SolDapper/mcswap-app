@@ -9,7 +9,7 @@
     z-index: 0;
 }
 .mcswap-wrapper{
-    border-radius: 8px;
+    border-radius: 10px;
     /* border: 1px solid #000; */
     font-family: "Ubuntu";
 }
@@ -222,7 +222,7 @@
     width: calc(50% - 12px);
     border-left: 1px solid #222;
     border-bottom: 1px solid #000;
-    min-height: 352px;
+    min-height: 354px;
     display: inline-block;
     vertical-align: top;
 }
@@ -484,7 +484,7 @@ li.control-li-collections button.mcswap-update-collections:disabled:hover{
     width: calc(50% - 50.5px);
     border-right: 1px solid #000;
     border-bottom: 1px solid #000;
-    min-height: 352px;
+    min-height: 354px;
     display: inline-block;
     vertical-align: top;
 }
@@ -705,7 +705,7 @@ li.control-li-preferences span.mcswap-standard-error{
 }
 
 .mcswap-listings{
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 10px 10px;
     /* border: 1px solid #222; */
     margin: 0;
     padding: 0;
@@ -739,6 +739,8 @@ li.control-li-preferences span.mcswap-standard-error{
     margin: 0;
     list-style-type: none;
     border: 1px solid #222;
+    border-left: 0;
+    border-right: 0;
     border-bottom: 1px solid #0a0a0a;
     transition: 0.5s;
 }
@@ -1061,19 +1063,6 @@ button#mcswap-preview-collection-value:hover{
     animation: message-blinker 1.5s linear infinite;
 }
 
-@media only screen and (min-width: 1100px) {
-    .mcswap-listings ul.mcswap-item{
-        display: inline-block;
-        width: calc(50% - 40px);
-    }
-    .mcswap-listings ul.mcswap-item:nth-of-type(even){
-        border-left: 1px solid #000;
-    }
-    /* .mcswap-listings ul.mcswap-item:nth-last-child(2){
-        border-bottom: 1px solid #222;
-    } */
-}
-
 @media only screen and (max-width: 1175px) {
     .mcswap-controls ul.control-ul li.control-li-list,
     .mcswap-controls ul.control-ul li.control-li-preferences,
@@ -1089,6 +1078,30 @@ button#mcswap-preview-collection-value:hover{
         border-top: 1px solid #222;
     }
 }
+
+@media only screen and (min-width: 1100px) {
+    .mcswap-listings ul.mcswap-item{
+        display: inline-block;
+        width: calc(50% - 39px);
+    }
+    .mcswap-listings ul.mcswap-item:nth-of-type(even){
+        border-left: 1px solid #000;
+    }
+    .mcswap-listings ul.mcswap-item:nth-child(odd){
+        border-left: 0;
+        border-right: 1px solid #000;
+    }
+    .mcswap-listings ul.mcswap-item:nth-child(even){
+        border-right: 0;
+        border-left: 1px solid #222;
+    }
+
+    /* .mcswap-listings ul.mcswap-item:nth-last-child(2){
+
+        border-bottom: 1px solid #222;
+    } */
+}
+
 @media only screen and (max-width: 633px) {
     li.control-li-list input.mint-address{
         display: block;
@@ -1103,19 +1116,30 @@ button#mcswap-preview-collection-value:hover{
 @media only screen and (min-width: 1580px) {
     .mcswap-listings ul.mcswap-item{
         display: inline-block;
-        width: calc(33.33% - 40px);
+        width: calc(33.33% - 39.5px);
         border-left: 1px solid #222;
         border-right: 1px solid #000;
     }
-    .mcswap-listings ul.mcswap-item:nth-of-type(even){
-        border-left: 1px solid #222;
-    }
-    /* .mcswap-listings ul.mcswap-item:nth-last-child(2){
+    /* .mcswap-listings ul.mcswap-item:nth-of-type(even){
         border-left: 1px solid #222;
     } */
-    .mcswap-listings ul.mcswap-item:nth-child(3n){
-        border-right: 1px solid #222;
+    .mcswap-listings ul.mcswap-item{
+        border: 1px solid #222;
+        border-bottom: 1px solid #000;
     }
+    .mcswap-listings ul.mcswap-item:nth-child(3n+1){
+        border-left: 0;
+        border-right: 1px solid #000;
+    }
+    .mcswap-listings ul.mcswap-item:nth-child(3n+2){
+        border-left: 1px solid #222;
+        border-right: 1px solid #000;
+    }
+    .mcswap-listings ul.mcswap-item:nth-child(3n+3){
+        border-left: 1px solid #222;
+        border-right: 0;
+    }
+
     /* .mcswap-listings ul.mcswap-item:nth-last-child(3){
         border-bottom: 1px solid #222;
     } */
