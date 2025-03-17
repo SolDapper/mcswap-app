@@ -22,6 +22,7 @@ import mcswapConnector from "mcswap-connector";
 import "mcswap-connector/src/colors/green-connector.css";
 const _wallets_ = process.env.WALLETS;
 const wallets = _wallets_.split(",");
+console.log(wallets);
 new mcswapConnector(wallets,emitter).init();
 
 // ****************************************************
@@ -64,8 +65,6 @@ import "mcswap-shop/src/colors/green-shop.css";
       default_sort: "Newest First",
       text_intro: "Initializing Demo",
       text_buy: "Buy Me",
-      // logo: "https://image-cdn.solana.fm/images/?imageUrl=https://f4xsxwnaxid37ojcze5qpc7p3ydfaj5dhynszhcjseeizelsa4mq.arweave.net/Ly8r2aC6B7-5Isk7B4vv3gZQJ6M-GyycSZEIjJFyBxk",
-      // logo_link: "https://chonky.com",
       logo: "https://pbs.twimg.com/profile_images/1827444138700054528/esOO7O4K_400x400.png",
       logo_link: "https://x.com/SolDapper",
       app_logo: "https://pbs.twimg.com/profile_images/1827444138700054528/esOO7O4K_400x400.png",
