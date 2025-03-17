@@ -45,32 +45,30 @@ class mcswapConnector {
       if(this.emitter!=false){this.emitter.emit('connected');}
   }
   async disconnect(change=false){
-    if(window.mcswap){
-      window.mcswap.removeAllListeners();
+    if(window.mcswap && window.mcswap!=false){
+      await window.mcswap.removeAllListeners();
       await window.mcswap.disconnect();
       if(this._wallets_.includes(change)){
         this.connect(change);
       }
       else{
         window.mcswap = false;
-        this.toast("Disconnected!", 2000);
+        if(change!=false){
+          this.toast("Disconnected!", 2000);
+        }
         this.disconnected();
       }
     }
     else{
-      this.disconnected();
+      this.disconnected(true);
     }
   }
-  async disconnected(){
-    $(".mcswap_disconnect_button").hide();
-    $(".mcswap_connect_button").show();
-    if(this.emitter!=false){this.emitter.emit('disconnected');}
+  async disconnected(skip=false){
+      $(".mcswap_disconnect_button").hide();
+      $(".mcswap_connect_button").show();
+      if(skip!=true && this.emitter!=false){this.emitter.emit('disconnected');}
   }
   async init(){
-
-    console.log(window.backpack);
-    console.log(window.backpack?.isBackpack);
-    
     // ********************************************
     const connector = '<div id="mcswap_connector"><div id="mcswap_cover"><div id="mcswap_message"></div></div><div id="mcswap_chooser"></div><input id="mcswap-account-change" value="" /></div>';
     $("body").append(connector);
@@ -109,9 +107,14 @@ class mcswapConnector {
     }
     else{
       for(let i=0;i<this.wallets.length;i++){
+        // checking for installed wallet failing with backpack
+        // and sometimes with solflare too
+        // console.log(window.backpack);
+        // console.log(window.backpack?.isBackpack);
+        // const is_installed = await wallet.installed();
+        // console.log(wallet.id+": "+is_installed);
         const wallet = this.wallets[i];
-        const is_installed = await wallet.installed();
-        console.log(wallet.id+": "+is_installed);
+        const is_installed = true;
         if(is_installed===true){
           $("#mcswap_"+wallet.id).attr("disabled",false);
         }

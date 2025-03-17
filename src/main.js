@@ -6,23 +6,23 @@ import 'animate.css';
 import 'dotenv/config';
 
 // ****************************************************
-// mcswap shop
+// mcswap connector
 import EventEmitter from 'events';
 const emitter = new EventEmitter();
-emitter.on('connected',()=>{
+emitter.on('connected',async()=>{
   $("#mcswap_cover, #mcswap_chooser").fadeOut(300);
   $("#mcswap_message").html("");
 });
-emitter.on('disconnected',()=>{
+emitter.on('disconnected',async()=>{
   $(".mcswap-item").removeClass("active");
   $(".mcswap-details-buy").prop("disabled", false);
   $(".mcswap-details-delist").prop("disabled", false).hide();
 });
-import mcswapConnector from "../plugin/mcswap-connector.js";
+import mcswapConnector from "mcswap-connector";
+import "mcswap-connector/src/colors/green-connector.css";
 const _wallets_ = process.env.WALLETS;
 const wallets = _wallets_.split(",");
-const connector = new mcswapConnector(wallets,emitter);
-connector.init();
+new mcswapConnector(wallets,emitter).init();
 
 // ****************************************************
 // styler
@@ -49,40 +49,11 @@ const styler = {
     "color": "#1367d4",
   }
 };
-// ****************************************************
-
-// ****************************************************
-// const styler = {
-//   shop:{
-//     "background": "#1a1a1a",
-//     "background-repeat": "no-repeat",
-//     "background-size": "cover",
-//     "background-position": "center"
-//   },
-//   wrapper:{
-//     // "background": "#000000eb"
-//   },
-//   header:{
-//     "color": "#fff"
-//   },
-//   titles:{
-//     "color": "#fff"
-//   },
-//   details:{
-//     "color": "#f6dd94",
-//   },
-//   labels:{
-//     "color": "#f6dd94",
-//   }
-
-// };
-// ****************************************************
 
 // ****************************************************
 // mcswap shop
-import shop from "../plugin/mcswap-shop";
-import "../plugin/color/green-shop.css";
-import "../plugin/color/green-connector.css";
+import shop from "mcswap-shop";
+import "mcswap-shop/src/colors/green-shop.css";
 (async()=>{
     const myshop = new shop(process.env.RPC,wallets);
     myshop.init({
@@ -93,7 +64,6 @@ import "../plugin/color/green-connector.css";
       default_sort: "Newest First",
       text_intro: "Initializing Demo",
       text_buy: "Buy Me",
-
       // logo: "https://image-cdn.solana.fm/images/?imageUrl=https://f4xsxwnaxid37ojcze5qpc7p3ydfaj5dhynszhcjseeizelsa4mq.arweave.net/Ly8r2aC6B7-5Isk7B4vv3gZQJ6M-GyycSZEIjJFyBxk",
       // logo_link: "https://chonky.com",
       logo: "https://pbs.twimg.com/profile_images/1827444138700054528/esOO7O4K_400x400.png",
