@@ -22,7 +22,6 @@ import mcswapConnector from "mcswap-connector";
 import "mcswap-connector/src/colors/green-connector.css";
 const _wallets_ = process.env.WALLETS;
 const wallets = _wallets_.split(",");
-console.log(wallets);
 new mcswapConnector(wallets,emitter).init();
 
 // ****************************************************
