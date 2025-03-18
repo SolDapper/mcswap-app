@@ -21,7 +21,7 @@
     "events": "^3.3.0",
     "import": "^0.0.6",
     "jquery": "^3.7.1",
-    "mcswap-connector": "^0.1.1",
+    "mcswap-connector": "^0.1.2",
     "mcswap-sdk": "^0.4.6",
     "mcswap-shop": "^0.0.5-dev",
     "os-browserify": "^0.3.0",

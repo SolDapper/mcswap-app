@@ -2,24 +2,24 @@
 'use strict';
 import $ from "jquery";
 import 'animate.css';
-
 import 'dotenv/config';
-
 // ****************************************************
 // mcswap connector
 import EventEmitter from 'events';
 const emitter = new EventEmitter();
-emitter.on('connected',async()=>{
+emitter.on('mcswap_connected',async()=>{
   $("#mcswap_cover, #mcswap_chooser").fadeOut(300);
   $("#mcswap_message").html("");
 });
-emitter.on('disconnected',async()=>{
+emitter.on('mcswap_disconnected',async()=>{
   $(".mcswap-item").removeClass("active");
   $(".mcswap-details-buy").prop("disabled", false);
   $(".mcswap-details-delist").prop("disabled", false).hide();
 });
 import mcswapConnector from "mcswap-connector";
 import "mcswap-connector/src/colors/green-connector.css";
+// import mcswapConnector from "../plugin/mcswap-connector.js";
+// import "../plugin/green-connector.css";
 const _wallets_ = process.env.WALLETS;
 const wallets = _wallets_.split(",");
 new mcswapConnector(wallets,emitter).init();
@@ -52,10 +52,11 @@ const styler = {
 
 // ****************************************************
 // mcswap shop
+// import shop from "../plugin/mcswap-shop.js";
 import shop from "mcswap-shop";
 import "mcswap-shop/src/colors/green-shop.css";
 (async()=>{
-    const myshop = new shop(process.env.RPC,wallets);
+    const myshop = new shop(process.env.RPC);
     myshop.init({
       id: "demo-market",
       name: "McSwap Shop",
