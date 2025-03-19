@@ -23,7 +23,7 @@
     "jquery": "^3.7.1",
     "mcswap-connector": "^0.1.2",
     "mcswap-sdk": "^0.4.6",
-    "mcswap-shop": "^0.0.5-dev",
+    "mcswap-shop": "^0.0.8-dev",
     "os-browserify": "^0.3.0",
     "parcel": "^2.13.3",
     "parcel-plugin-static-files-copy": "^2.6.0",
