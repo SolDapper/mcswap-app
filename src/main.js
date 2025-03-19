@@ -52,8 +52,8 @@ const styler = {
 
 // ****************************************************
 // mcswap shop
-import shop from "../plugin/mcswap-shop.js";
-// import shop from "mcswap-shop";
+// import shop from "../plugin/mcswap-shop.js";
+import shop from "mcswap-shop";
 import "mcswap-shop/src/colors/green-shop.css";
 const myshop = new shop(process.env.RPC);
 myshop.init({
