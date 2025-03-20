@@ -8,6 +8,7 @@ import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css";
 import "./style.css";
 import "./colors/green-app.css";
+
 // ****************************************************
 // mcswap connector
 import EventEmitter from 'events';
@@ -21,8 +22,6 @@ emitter.on('mcswap_disconnected',async()=>{
   $(".mcswap-details-buy").prop("disabled", false);
   $(".mcswap-details-delist").prop("disabled", false).hide();
 });
-// import mcswapConnector from "../plugin/mcswap-connector.js";
-// import "../plugin/green-connector.css";
 import mcswapConnector from "mcswap-connector";
 import "mcswap-connector/src/colors/green-connector.css";
 const _wallets_ = process.env.WALLETS;
@@ -87,7 +86,7 @@ $("#mcswap_menu_button").on("click", function(){
 
 // ****************************************************
 // mobile menu button clicks
-$("#mcswap_menu_button a").on("click", function(e){
+$("#mcswap_menu_button a, a#mcswap-solana-link").on("click", function(e){
   e.preventDefault();
   if(isMobile()){
     copy($(this).attr("href"));
