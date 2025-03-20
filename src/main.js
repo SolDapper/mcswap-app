@@ -86,7 +86,7 @@ $("#mcswap_menu_button").on("click", function(){
 
 // ****************************************************
 // mobile menu button clicks
-$("#mcswap_menu_button a, a#mcswap-solana-link").on("click", function(e){
+$("a.mcswap_menu_link, a#mcswap-solana-link").on("click", function(e){
   e.preventDefault();
   if(isMobile()){
     copy($(this).attr("href"));

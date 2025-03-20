@@ -129,7 +129,7 @@ a, button, input, select, img{
     min-width: 250px;
     border-radius: 8px;
     z-index: 1;
-    margin: 10px 0 0 -5px;
+    margin: 10px 0 0 -4px;
     transition: 0.3s;
 }
 
@@ -179,14 +179,14 @@ a, button, input, select, img{
     color: #fff;
     background: #111;
 }
-#mcswap_menu_drop a.mcswap_menu_link:first-of-type{
+/* #mcswap_menu_drop a.mcswap_menu_link:first-of-type{
     border-radius: 8px 8px 0 0;
     border-top: 0;
 }
 #mcswap_menu_drop a.mcswap_menu_link:last-of-type{
     border-radius: 0 0 8px 8px;
     border-bottom: 0;
-}
+} */
 
 @media only screen and (max-width: 900px) {
     #mcswap_menu_top{
@@ -197,6 +197,9 @@ a, button, input, select, img{
     }
     #mcswap_menu_button{
         display: block;
+    }
+    #banner img.banner {
+        height: 108px;
     }
 }
 
