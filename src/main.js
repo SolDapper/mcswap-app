@@ -104,7 +104,7 @@ import shop from "mcswap-shop";
 import "mcswap-shop/src/colors/green-shop.css";
 const myshop = new shop(process.env.RPC);
 myshop.init({
-  id: "demo-market",
+  id: "mcswap-shop",
   name: "McSwap Shop",
   default_priority: "Low",
   default_display: "All Listings",
