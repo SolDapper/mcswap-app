@@ -5,6 +5,24 @@
 ![powered by solana](http://mcswap.xyz/gh/stacked-color.svg)
 
 ## clone it
-```javascript
+```html
 git clone https://github.com/SolDapper/mcswap-app.git
 ```
+
+## .env
+create a .env file in your project directory with the following details
+```html
+PORT = 4400
+RPC = https://staked.helius-rpc.com?api-key=YOUR_KEY_HERE
+WALLETS = phantom,solflare,backpack
+```
+
+## run locally
+```html
+npm start
+```
+you can view your new shop at http://localhost:4400
+
+## customize
+
+## deploy
