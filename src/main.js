@@ -3,6 +3,11 @@
 import $ from "jquery";
 import 'animate.css';
 import 'dotenv/config';
+import "@fontsource/ubuntu";
+import Toastify from 'toastify-js';
+import "toastify-js/src/toastify.css";
+import "./style.css";
+import "./colors/green-app.css";
 // ****************************************************
 // mcswap connector
 import EventEmitter from 'events';
@@ -17,38 +22,80 @@ emitter.on('mcswap_disconnected',async()=>{
   $(".mcswap-details-delist").prop("disabled", false).hide();
 });
 import mcswapConnector from "mcswap-connector";
-import "mcswap-connector/src/colors/green-connector.css";
+// import "mcswap-connector/src/colors/green-connector.css";
 // import mcswapConnector from "../plugin/mcswap-connector.js";
-// import "../plugin/green-connector.css";
+import "../plugin/green-connector.css";
 const _wallets_ = process.env.WALLETS;
 const wallets = _wallets_.split(",");
 new mcswapConnector(wallets,emitter).init();
 
 // ****************************************************
-// styler
-const styler = {
-  shop:{
-    "background": "#1a1a1a",
-    "background-repeat": "no-repeat",
-    "background-size": "cover",
-    "background-position": "center"
+// app config
+const config = {};
+config.menu = [
+  {
+    text: "App",
+    title: "McSwap App Repo",
+    href: "https://github.com/SolDapper/mcswap-app",
   },
-  wrapper:{
-    // "background": "#000000eb"
+  {
+    text: "Shop",
+    title: "McSwap Shop Repo",
+    href: "https://github.com/SolDapper/mcswap-shop",
   },
-  header:{
-    "color": "#fff"
+  {
+    text: "Connector",
+    title: "McSwap Connector Repo",
+    href: "https://github.com/SolDapper/mcswap-connector",
   },
-  titles:{
-    "color": "#fff"
-  },
-  details:{
-    "color": "#1367d4",
-  },
-  labels:{
-    "color": "#1367d4",
+  {
+    text: "SDK",
+    title: "McSwap SDK Repo",
+    href: "https://github.com/SolDapper/mcswap-sdk",
   }
-};
+];
+config.intro_1 = "Your Own";
+config.intro_2 = "Digital Asset Shop";
+config.intro_3 = "McSwap!";
+
+// ****************************************************
+// apply intro text
+$("#intro-1").html(config.intro_1);
+$("#intro-2").html(config.intro_2);
+$("#intro-3").html(config.intro_3);
+
+// ****************************************************
+// apply banner and menu
+for(let i=0; i<config.menu.length; i++){
+  const item = config.menu[i];
+  $("#mcswap_menu_top").append("<a class='mcswap_menu_link' target='_blank' href='"+item.href+"' title='"+item.title+"'>"+item.text+"</a>");
+  $("#mcswap_menu_drop").append("<a class='mcswap_menu_link' target='_blank' href='"+item.href+"' title='"+item.title+"'>"+item.text+"</a>");
+}
+
+// ****************************************************
+// mobile menu open/close
+$("#mcswap_menu_button").on("click", function(){
+  if($(this).hasClass("mcswap_menu_active")){
+    $(this).removeClass("mcswap_menu_active");
+    $("#mcswap_menu_drop").hide();
+  }
+  else{
+    $(this).addClass("mcswap_menu_active");
+    $("#mcswap_menu_drop").show();
+  }
+});
+
+// ****************************************************
+// mobile menu button clicks
+$("#mcswap_menu_button a").on("click", function(e){
+  e.preventDefault();
+  if(isMobile()){
+    copy($(this).attr("href"));
+  }
+  else{
+    window.open($(this).attr("href"),'_blank').focus();
+  }
+});
 
 // ****************************************************
 // mcswap shop
@@ -87,10 +134,85 @@ myshop.init({
   master_settings: true,
   collections_display: true,
   sellers_display: true,
-  shop_styler: styler
+  shop_styler: {
+    shop:{
+      "background": "#1a1a1a",
+      "background-repeat": "no-repeat",
+      "background-size": "cover",
+      "background-position": "center"
+    },
+    wrapper:{
+      // "background": "#000000eb"
+    },
+    header:{
+      "color": "#fff"
+    },
+    titles:{
+      "color": "#fff"
+    },
+    details:{
+      "color": "#1367d4",
+    },
+    labels:{
+      "color": "#1367d4",
+    }
+  }
 });
 
-//*****************************************************
+// *****************************************************
+// clipboard
+function copy(string){
+  let textArea = document.createElement('textarea');
+  textArea.setAttribute('style', 'width:1px;border:0;opacity:0;');
+  textArea.setAttribute('id', 'temp_copy');
+  document.body.appendChild(textArea);
+  textArea.value = string;
+  textArea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textArea);
+  toast("Copied to Clipboard", 2000);
+  return;
+}
+
+// *****************************************************
+// mobile check
+function isMobile(){
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// *****************************************************
+// toast
+function toast(message,wait,error=false){
+  let color = "#111";
+  let background = "#fff";
+  if(error===true){
+      color = "#111";
+      background = "#fff"
+  }
+  else{
+      color = "#111";
+      background = "#fff";
+  }
+  Toastify({
+      text: message,
+      duration: wait,
+      newWindow: false,
+      close: false,
+      gravity: "bottom", // `top` or `bottom`
+      position: "left", // `left`, `center` or `right`
+      stopOnFocus: false, // Prevents dismissing of toast on hover
+      style: {
+          "font-weight": "bold",
+          "font-family": "Ubuntu",
+          "border-radius": "10px",
+          "color": color,
+          "background": background,
+      },
+      onClick: function(){} // Callback after click
+  }).showToast();
+}
+
+// *****************************************************
 // intro
 setTimeout(function(){
   $("#intro-1").removeClass("animate__flipInY").addClass("animate__zoomOut");

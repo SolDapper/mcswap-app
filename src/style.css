@@ -38,7 +38,6 @@ a, button, input, select, img{
     font-size: 22px;
     font-weight: bold;
     text-align: center;
-    text-shadow: #154ab3 0px 0px 18px;
     color: #fff;
     height: 26px;
     width: 300px;
@@ -47,6 +46,16 @@ a, button, input, select, img{
 }
 #intro-1{
     display: block;
+}
+#banner{
+    background: #1a1a1a;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+#banner img{
+    height: 150px;
+    border-radius: 10px 0 0 10px;
 }
 #mcswap-dapp-nav{
     width: 100%;
@@ -67,6 +76,116 @@ a, button, input, select, img{
     border-radius: 8px;
     margin: -5px 0 0 -5px;
 }
+#mcswap_menu{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -5px;
+    margin-left: 10px;
+    height: 52px;
+}
+#mcswap_menu_button{
+    display: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    width: 52px;
+    height: 52px;
+    border: 0;
+    outline: 0;
+    vertical-align: top;
+    background: #111;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 59% 65%;
+    background-image: url("./img/menu.png");
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#mcswap_menu_mobile{
+    display: inline-block;
+    display: none;
+    transition: 0.3s;
+}
+
+#mcswap_menu_drop{
+    display: none;
+    position: absolute;
+    background: #111;
+    min-width: 250px;
+    border-radius: 8px;
+    z-index: 1;
+    margin: 10px 0 0 -5px;
+    transition: 0.3s;
+}
+
+#mcswap_menu_top{
+    display: block;
+    height: 40px;
+    background: none;
+    width: auto;
+    margin-top: 6px;
+    margin-left: 4px;
+    transition: 0.3s;
+}
+
+#mcswap_menu_top a, #mcswap_menu_drop a{
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+    background: #111;
+    height: 39px;
+    line-height: 39px;
+    vertical-align: middle;
+    padding: 0 10px;
+    font-weight: bold;
+    font-family: Ubuntu;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 16px;
+    min-width: 120px;
+    text-align: center;
+    transition: 0.3s;
+    background: #111111;
+    background: linear-gradient(355deg, #111 0%, #202020 100%);
+}
+#mcswap_menu_top a:hover{
+    color: #fff;
+}
+#mcswap_menu_drop a{
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    height: 56px;
+    line-height: 55px;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #000;
+}
+#mcswap_menu_drop a:hover{
+    color: #fff;
+    background: #111;
+}
+#mcswap_menu_drop a.mcswap_menu_link:first-of-type{
+    border-radius: 8px 8px 0 0;
+    border-top: 0;
+}
+#mcswap_menu_drop a.mcswap_menu_link:last-of-type{
+    border-radius: 0 0 8px 8px;
+    border-bottom: 0;
+}
+
+@media only screen and (max-width: 900px) {
+    #mcswap_menu_top{
+      display: none;
+    }
+    #mcswap_menu_mobile{
+        display: inline-block;
+    }
+    #mcswap_menu_button{
+        display: block;
+    }
+}
+
 .mcswap-shop{
     margin-bottom: 0;
     overflow: auto;
