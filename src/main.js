@@ -53,15 +53,12 @@ config.menu = [
     href: "https://github.com/SolDapper/mcswap-sdk",
   }
 ];
-config.intro_1 = "Your Own";
-config.intro_2 = "Digital Asset Shop";
-config.intro_3 = "McSwap!";
 
 // ****************************************************
 // apply intro text
-$("#intro-1").html(config.intro_1);
-$("#intro-2").html(config.intro_2);
-$("#intro-3").html(config.intro_3);
+$("#intro-1").html("Your Own");
+$("#intro-2").html("Digital Asset Shop");
+$("#intro-3").html("McSwap!");
 
 // ****************************************************
 // apply banner and menu
