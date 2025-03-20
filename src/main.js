@@ -21,10 +21,10 @@ emitter.on('mcswap_disconnected',async()=>{
   $(".mcswap-details-buy").prop("disabled", false);
   $(".mcswap-details-delist").prop("disabled", false).hide();
 });
-import mcswapConnector from "mcswap-connector";
-// import "mcswap-connector/src/colors/green-connector.css";
 // import mcswapConnector from "../plugin/mcswap-connector.js";
-import "../plugin/green-connector.css";
+// import "../plugin/green-connector.css";
+import mcswapConnector from "mcswap-connector";
+import "mcswap-connector/src/colors/green-connector.css";
 const _wallets_ = process.env.WALLETS;
 const wallets = _wallets_.split(",");
 new mcswapConnector(wallets,emitter).init();
