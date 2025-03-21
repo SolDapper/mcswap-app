@@ -197,6 +197,12 @@ a, button, input, select, img{
     }
 }
 
+@media only screen and (max-width: 400px) {
+    #mcswap_menu_drop a {
+        line-height: 50px;
+    }
+}
+
 .mcswap-shop{
     margin-bottom: 0;
     overflow: auto;
