@@ -3,6 +3,11 @@ html, body{
     padding: 0;
     height: auto;
 }
+main{
+    display: block;
+    margin: 0 auto;
+    max-width: 1650px;
+}
 body{
     padding: 19px 16px 19px 16px;
     overflow: hidden;
@@ -54,10 +59,10 @@ a, button, input, select, img{
     margin-bottom: 18px;
 }
 #banner img.banner{
-    height: 150px;
-    border-radius: 10px 0 0 10px;
+    height: 35px;
+    border-radius: 4px;
     padding: 0;
-    margin: 0;
+    margin: 15px;
     vertical-align: top;
 }
 #banner a#mcswap-solana-link{
@@ -191,9 +196,6 @@ a, button, input, select, img{
     }
     #mcswap_menu_button{
         display: block;
-    }
-    #banner img.banner {
-        height: 65px;
     }
 }
 

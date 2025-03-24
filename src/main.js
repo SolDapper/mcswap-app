@@ -7,7 +7,7 @@ import "@fontsource/ubuntu";
 import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css";
 import "./style.css";
-import "./colors/green-app.css";
+// import "./colors/green-app.css";
 
 // ****************************************************
 // mcswap connector
@@ -23,7 +23,7 @@ emitter.on('mcswap_disconnected',async()=>{
   $(".mcswap-details-delist").prop("disabled", false).hide();
 });
 import mcswapConnector from "mcswap-connector";
-import "mcswap-connector/src/colors/green-connector.css";
+// import "mcswap-connector/src/colors/blue-connector.css";
 const _wallets_ = process.env.WALLETS;
 const wallets = _wallets_.split(",");
 new mcswapConnector(wallets,emitter).init();
@@ -97,7 +97,7 @@ $("a.mcswap_menu_link, a#mcswap-solana-link").on("click", function(e){
 // mcswap shop
 // import shop from "../plugin/mcswap-shop.js";
 import shop from "mcswap-shop";
-import "mcswap-shop/src/colors/green-shop.css";
+// import "mcswap-shop/src/colors/green-shop.css";
 const myshop = new shop(process.env.RPC);
 myshop.init({
   id: "mcswap-shop",
