@@ -218,6 +218,13 @@ h1{
     }
 }
 
+@media only screen and (max-width: 600px) {
+    h1{
+        font-size: 15px;
+        margin-top: 24px;
+    }
+}
+
 @media only screen and (max-width: 400px) {
     #mcswap_menu_drop a {
         line-height: 50px;
