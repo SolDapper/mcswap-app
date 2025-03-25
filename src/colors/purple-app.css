@@ -1,0 +1,19 @@
+.intros{
+    text-shadow: 0 0 20px #3b27ba;
+}
+#mcswap_menu_button.mcswap_menu_active{
+    box-shadow: 0 0 10px 3px #3b27ba;
+}
+#mcswap_menu_top a{
+    box-shadow: 0 0 4px 0 #3b27ba;
+}
+#mcswap_menu_top a:hover{
+    box-shadow: 0 0 10px 3px #3b27ba;
+    text-shadow: 0 0 20px #3b27ba;
+}
+#mcswap_menu_drop {
+    border: 6px solid #3b27ba;
+}
+#mcswap_menu_drop a:hover {
+    text-shadow: 0 0 20px #3b27ba;
+}

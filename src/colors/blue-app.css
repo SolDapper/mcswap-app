@@ -1,9 +1,6 @@
 .intros{
     text-shadow: 0 0 20px #1367d4;
 }
-#mcswap_menu_button:hover{
-    box-shadow: 0 0 10px 3px #1367d4;
-}
 #mcswap_menu_button.mcswap_menu_active{
     box-shadow: 0 0 10px 3px #1367d4;
 }
