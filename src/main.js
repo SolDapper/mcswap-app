@@ -51,6 +51,7 @@ config.menu = [
     text: "SDK",
     title: "McSwap SDK Repo",
     href: "https://github.com/SolDapper/mcswap-sdk",
+    view: "sdk",
   },
   {
     text: "Discord",

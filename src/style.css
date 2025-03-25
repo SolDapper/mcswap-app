@@ -52,6 +52,12 @@ a, button, input, select, img{
 #intro-1{
     display: block;
 }
+.page{
+    display: none;
+}
+[data-view="home"]{
+    display: block;
+}
 #banner{
     background: #1a1a1a;
     width: 100%;
