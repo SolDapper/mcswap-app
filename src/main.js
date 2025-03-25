@@ -51,6 +51,16 @@ config.menu = [
     text: "SDK",
     title: "McSwap SDK Repo",
     href: "https://github.com/SolDapper/mcswap-sdk",
+  },
+  {
+    text: "Discord",
+    title: "McSwap Discord",
+    href: "https://discord.gg/Z9bUEf8gYb",
+  },
+  {
+    text: "X",
+    title: "McSwap on X",
+    href: "https://x.com/mcswapshop",
   }
 ];
 
@@ -101,7 +111,7 @@ import shop from "mcswap-shop";
 const myshop = new shop(process.env.RPC);
 myshop.init({
   id: "mcswap-shop",
-  name: "McSwap Shop",
+  name: "Demo Shop",
   default_priority: "Low",
   default_display: "All Listings",
   default_sort: "Newest First",

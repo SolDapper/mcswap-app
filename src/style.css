@@ -55,8 +55,9 @@ a, button, input, select, img{
 #banner{
     background: #1a1a1a;
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 18px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #0f0f0f;
 }
 #banner img.banner{
     height: 35px;
@@ -64,6 +65,17 @@ a, button, input, select, img{
     padding: 0;
     margin: 15px;
     vertical-align: top;
+}
+h1{
+    float: left;
+    color: #fff;
+    height: 35px;
+    margin: 19px 0 0 65px;
+    padding: 0;
+    font-family: "Ubuntu";
+    font-size: 22px;
+    display: block;
+    position: absolute;
 }
 #banner a#mcswap-solana-link{
     display: block;
@@ -79,13 +91,14 @@ a, button, input, select, img{
 #mcswap-dapp-nav{
     width: 100%;
     padding: 0;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     margin: 0 0 18px 0;
+    border-top: 1px solid #222;
 }
 #mcswap-dapp-nav-box{
     width: calc(100% - 30px);
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     height: 41px;
     background: #1a1a1a;
 }
@@ -156,7 +169,7 @@ a, button, input, select, img{
     color: #fff;
     font-size: 14px;
     margin-right: 16px;
-    min-width: 120px;
+    width: 90px;
     text-align: center;
     transition: 0.3s;
     background: #111111;
@@ -187,7 +200,7 @@ a, button, input, select, img{
     border-bottom: 0;
 } */
 
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 950px) {
     #mcswap_menu_top{
       display: none;
     }
