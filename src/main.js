@@ -23,8 +23,7 @@ emitter.on('mcswap_disconnected',async()=>{
   $(".mcswap-details-delist").prop("disabled", false).hide();
 });
 import mcswapConnector from "mcswap-connector";
-// import mcswapConnector from "../plugin/mcswap-connector.js";
-// import "mcswap-connector/src/colors/blue-connector.css";
+// import "mcswap-connector/src/colors/green-connector.css";
 const _wallets_ = process.env.WALLETS;
 const wallets = _wallets_.split(",");
 new mcswapConnector(wallets,emitter).init();
@@ -107,9 +106,7 @@ $("a.mcswap_menu_link, a#mcswap-solana-link").on("click", function(e){
 
 // ****************************************************
 // mcswap shop
-// import shop from "../plugin/mcswap-shop.js";
 import shop from "mcswap-shop";
-// import "mcswap-shop/src/colors/green-shop.css";
 const myshop = new shop(process.env.RPC);
 myshop.init({
   id: "mcswap-shop",
@@ -142,29 +139,6 @@ myshop.init({
   master_settings: true,
   collections_display: true,
   sellers_display: true,
-  // shop_styler: {
-  //   shop:{
-  //     "background": "#1a1a1a",
-  //     "background-repeat": "no-repeat",
-  //     "background-size": "cover",
-  //     "background-position": "center"
-  //   },
-  //   wrapper:{
-  //     // "background": "#000000eb"
-  //   },
-  //   header:{
-  //     "color": "#fff"
-  //   },
-  //   titles:{
-  //     "color": "#fff"
-  //   },
-  //   details:{
-  //     "color": "#1367d4",
-  //   },
-  //   labels:{
-  //     "color": "#1367d4",
-  //   }
-  // }
 });
 
 // *****************************************************

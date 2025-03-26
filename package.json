@@ -21,7 +21,7 @@
     "import": "^0.0.6",
     "jquery": "^3.7.1",
     "mcswap": "^0.4.7",
-    "mcswap-connector": "^0.3.1",
+    "mcswap-connector": "^0.3.6",
     "mcswap-shop": "^0.2.7",
     "os-browserify": "^0.3.0",
     "parcel": "^2.13.3",

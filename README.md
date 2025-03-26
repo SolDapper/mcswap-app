@@ -19,9 +19,4 @@ WALLETS = phantom,solflare,backpack
 ```html
 npm start
 ```
-you can view your new shop at http://localhost:4400
-
-## customize
-
-
-## deploy
+open your browser to: http://localhost:4400
