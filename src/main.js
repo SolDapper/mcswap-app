@@ -37,7 +37,7 @@ config.menu = [
     href: "https://github.com/SolDapper/mcswap-app",
   },
   {
-    text: "Shop",
+    text: "Module",
     title: "McSwap Shop Repo",
     href: "https://github.com/SolDapper/mcswap-shop",
   },
@@ -189,9 +189,9 @@ function toast(message,wait,error=false){
 
 // *****************************************************
 // intro
-$("#intro-1").html("McSwap Ecomm");
-$("#intro-2").html("Your Own");
-$("#intro-3").html("Digital Asset Shop");
+$("#intro-1").html("Your Own");
+$("#intro-2").html("Digital Asset Shop");
+$("#intro-3").html("McSwap!");
 setTimeout(function(){
   $("#intro-1").removeClass("animate__flipInY").addClass("animate__zoomOut");
   $("#intro-2").show();

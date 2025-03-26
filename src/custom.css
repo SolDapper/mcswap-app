@@ -1,3 +1,9 @@
 .mcswap-details-link a {
-    color: #1b5bd0;
+    color: #2258c2;
+}
+li.control-li-preferences label,
+li.control-li-list label,
+li.control-li-collections label,
+li.control-li-sellers label{
+    color: #2258c2;
 }
