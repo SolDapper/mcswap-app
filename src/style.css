@@ -145,9 +145,9 @@ h1{
     position: absolute;
     background: #111;
     width: 290px;
-    border-radius: 8px;
+    border-radius: 10px;
     z-index: 1;
-    margin: 10px 0 0 -3px;
+    margin: 10px 0 0 -1px;
     transition: 0.3s;
 }
 
@@ -243,4 +243,24 @@ h1{
     margin-bottom: 0;
     overflow: auto;
     border-radius: 10px;
+}
+
+.intros{
+    text-shadow: 0 0 10px #fff;
+}
+#mcswap_menu_button.mcswap_menu_active{
+    box-shadow: 0 0 10px 3px #fff;
+}
+#mcswap_menu_top a{
+    box-shadow: none;
+}
+#mcswap_menu_top a:hover{
+    box-shadow: 0 0 7px 2px #fff;
+    text-shadow: 0 0 20px #fff;
+}
+#mcswap_menu_drop {
+    border: 6px solid #fff;
+}
+#mcswap_menu_drop a:hover {
+    text-shadow: 0 0 20px #fff;
 }
