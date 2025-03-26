@@ -7,7 +7,6 @@ import "@fontsource/ubuntu";
 import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css";
 import "./style.css";
-// import "./colors/blue-app.css";
 
 // ****************************************************
 // mcswap connector
@@ -64,12 +63,6 @@ config.menu = [
     href: "https://x.com/mcswapshop",
   }
 ];
-
-// ****************************************************
-// apply intro text
-$("#intro-1").html("Your Own");
-$("#intro-2").html("Digital Asset Shop");
-$("#intro-3").html("McSwap!");
 
 // ****************************************************
 // apply banner and menu
@@ -196,6 +189,9 @@ function toast(message,wait,error=false){
 
 // *****************************************************
 // intro
+$("#intro-1").html("McSwap Ecomm");
+$("#intro-2").html("Your Own");
+$("#intro-3").html("Digital Asset Shop");
 setTimeout(function(){
   $("#intro-1").removeClass("animate__flipInY").addClass("animate__zoomOut");
   $("#intro-2").show();
@@ -209,3 +205,7 @@ setTimeout(function(){
     },2400);
   },1800);
 },1800);
+
+// *****************************************************
+// custom css
+import "./custom.css";

@@ -1,6 +1,6 @@
 # mcswap-app
 
-![powered by solana](https://repository-images.githubusercontent.com/944753274/502b7e56-0705-4285-9f6f-8ecb269011d3)
+![powered by solana](https://repository-images.githubusercontent.com/944753274/1145e6b0-4ad7-4887-acf9-21b9d673a8fd)
 
 ## clone it
 ```html

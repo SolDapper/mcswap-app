@@ -247,7 +247,7 @@ h1{
 }
 
 .intros{
-    text-shadow: 0 0 10px #fff;
+    /* text-shadow: 0 0 10px #fff; */
 }
 #mcswap_menu_button.mcswap_menu_active{
     box-shadow: 0 0 10px 3px #fff;
