@@ -164,7 +164,7 @@ h1{
 #mcswap_menu_top a, #mcswap_menu_drop a{
     text-decoration: none;
     display: inline-block;
-    border-radius: 8px;
+    border-radius: 30px;
     background: #111;
     height: 39px;
     line-height: 39px;
@@ -243,6 +243,7 @@ h1{
     margin-bottom: 0;
     overflow: auto;
     border-radius: 10px;
+    background: #1a1a1a;
 }
 
 .intros{
