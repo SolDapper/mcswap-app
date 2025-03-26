@@ -142,29 +142,29 @@ myshop.init({
   master_settings: true,
   collections_display: true,
   sellers_display: true,
-  shop_styler: {
-    shop:{
-      "background": "#1a1a1a",
-      "background-repeat": "no-repeat",
-      "background-size": "cover",
-      "background-position": "center"
-    },
-    wrapper:{
-      // "background": "#000000eb"
-    },
-    header:{
-      "color": "#fff"
-    },
-    titles:{
-      "color": "#fff"
-    },
-    details:{
-      "color": "#1367d4",
-    },
-    labels:{
-      "color": "#1367d4",
-    }
-  }
+  // shop_styler: {
+  //   shop:{
+  //     "background": "#1a1a1a",
+  //     "background-repeat": "no-repeat",
+  //     "background-size": "cover",
+  //     "background-position": "center"
+  //   },
+  //   wrapper:{
+  //     // "background": "#000000eb"
+  //   },
+  //   header:{
+  //     "color": "#fff"
+  //   },
+  //   titles:{
+  //     "color": "#fff"
+  //   },
+  //   details:{
+  //     "color": "#1367d4",
+  //   },
+  //   labels:{
+  //     "color": "#1367d4",
+  //   }
+  // }
 });
 
 // *****************************************************
