@@ -4,6 +4,7 @@
 li.control-li-preferences label,
 li.control-li-list label,
 li.control-li-collections label,
-li.control-li-sellers label{
+li.control-li-sellers label,
+.mcswap-poweredby a{
     color: #2258c2;
 }
