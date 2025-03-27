@@ -22,7 +22,7 @@ emitter.on('mcswap_disconnected',async()=>{
   $(".mcswap-details-delist").prop("disabled", false).hide();
 });
 import mcswapConnector from "mcswap-connector";
-// import "mcswap-connector/src/colors/green-connector.css";
+import "mcswap-connector/src/colors/blue-connector.css";
 const _wallets_ = process.env.WALLETS;
 const wallets = _wallets_.split(",");
 new mcswapConnector(wallets,emitter).init();
@@ -50,17 +50,16 @@ config.menu = [
     text: "SDK",
     title: "McSwap SDK Repo",
     href: "https://github.com/SolDapper/mcswap-sdk",
-    view: "sdk",
   },
   {
-    text: "Discord",
     title: "McSwap Discord",
     href: "https://discord.gg/Z9bUEf8gYb",
+    img: "discord"
   },
   {
-    text: "X",
     title: "McSwap on X",
     href: "https://x.com/mcswapshop",
+    img: "x"
   }
 ];
 
@@ -68,8 +67,13 @@ config.menu = [
 // apply banner and menu
 for(let i=0; i<config.menu.length; i++){
   const item = config.menu[i];
-  $("#mcswap_menu_top").append("<a class='mcswap_menu_link' target='_blank' href='"+item.href+"' title='"+item.title+"'>"+item.text+"</a>");
-  $("#mcswap_menu_drop").append("<a class='mcswap_menu_link' target='_blank' href='"+item.href+"' title='"+item.title+"'>"+item.text+"</a>");
+  if(!item.text){item.text="";}
+  if(!item.img){item.img="";}else{
+    item.img = $("img#logo-"+item.img).attr("src");
+    item.img="<img src='"+item.img+"' />";
+  }
+  $("#mcswap_menu_top").append("<a class='mcswap_menu_link' target='_blank' href='"+item.href+"' title='"+item.title+"'>"+item.img+item.text+"</a>");
+  $("#mcswap_menu_drop").append("<a class='mcswap_menu_link' target='_blank' href='"+item.href+"' title='"+item.title+"'>"+item.img+item.text+"</a>");
 }
 
 // ****************************************************

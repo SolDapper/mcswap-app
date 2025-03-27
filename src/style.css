@@ -23,6 +23,11 @@ a, button, input, select, img{
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
 }
+img.preloaded{
+    width: 1px;
+    height: 1px;
+    visibility: hidden;
+}
 #intro{
     display: block;
     position: fixed;
@@ -203,6 +208,13 @@ h1{
 #mcswap_menu_drop a:hover{
     color: #fff;
     background: #111;
+}
+#mcswap_menu_top a img, #mcswap_menu_drop a img{
+    width: auto;
+    height: 25px;
+    outline: none;
+    vertical-align: top;
+    margin-top: 6px;
 }
 /* #mcswap_menu_drop a.mcswap_menu_link:first-of-type{
     border-radius: 8px 8px 0 0;
