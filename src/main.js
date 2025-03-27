@@ -57,7 +57,7 @@ config.menu = [
     img: "discord"
   },
   {
-    title: "McSwap on X",
+    title: "McSwap X",
     href: "https://x.com/mcswapshop",
     img: "x"
   }
