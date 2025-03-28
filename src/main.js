@@ -107,7 +107,7 @@ import shop from "mcswap-shop";
 const myshop = new shop(process.env.RPC);
 myshop.init({
   id: "mcswap-shop",
-  name: "Demo Shop",
+  name: "Module Demo",
   default_priority: "Low",
   default_display: "All Listings",
   default_sort: "Newest First",
