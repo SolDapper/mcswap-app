@@ -7,7 +7,6 @@ import "@fontsource/ubuntu";
 import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css";
 import "./style.css";
-
 // ****************************************************
 // mcswap connector
 import EventEmitter from 'events';
@@ -103,8 +102,8 @@ $("a.mcswap_menu_link, a#mcswap-solana-link").on("click", function(e){
 
 // ****************************************************
 // mcswap shop
-// import shop from "../plugin/mcswap-shop.js";
-import shop from "mcswap-shop";
+import shop from "../plugin/mcswap-shop.js";
+// import shop from "mcswap-shop";
 const myshop = new shop(process.env.RPC);
 myshop.init({
   id: "mcswap-shop",
