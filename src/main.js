@@ -30,11 +30,11 @@ new mcswapConnector(wallets,emitter).init();
 // app config
 const config = {};
 config.menu = [
-  {
-    text: "App",
-    title: "McSwap App Repo",
-    href: "https://github.com/SolDapper/mcswap-app",
-  },
+  // {
+  //   text: "App",
+  //   title: "McSwap App Repo",
+  //   href: "https://github.com/SolDapper/mcswap-app",
+  // },
   {
     text: "Module",
     title: "McSwap Shop Repo",
