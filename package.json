@@ -1,6 +1,6 @@
 {
   "name": "mcswap-app",
-  "version": "1.1",
+  "version": "1.2",
   "description": "the mcswap market plugin displays public nft listings powered by mcswap escrows for one or more seller wallet addresses",
   "scripts": {
     "build": "parcel build ./src/index.html",
