@@ -3,8 +3,8 @@ import 'dotenv/config';
 const config = {};
 config.kiosk = false;
 // config.kiosk = {
-//   touch:true,
-//   refresh:60000
+//   touch: true,
+//   refresh: 60000
 // };
 config.menu = [
   // {
