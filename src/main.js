@@ -87,40 +87,7 @@ $("a.mcswap_menu_link, a#mcswap-solana-link").on("click", function(e){
 // import shop from "../plugin/mcswap-shop.js";
 import shop from "mcswap-shop";
 const myshop = new shop(process.env.RPC);
-myshop.init({
-  id: "mcswap-shop",
-  name: "Module Demo",
-  default_priority: "Low",
-  default_display: "All Listings",
-  default_sort: "Newest First",
-  text_intro: "Initializing Demo",
-  text_buy: "Buy Me",
-  logo: "./img/logo.png",
-  logo_link: "https://x.com/SolDapper",
-  enable_new_listings: true,
-  enable_edit_sort: true,
-  enable_edit_display: true,
-  enable_edit_core: true,
-  core_display: true,
-  enable_edit_nft: true,
-  nft_display: true,
-  enable_edit_pnft: true,
-  pnft_display: true,
-  enable_edit_cnft: true,
-  cnft_display: true,
-  fee_create: 0,
-  fee_execute: 0,
-  treasury: "ACgZcmgmAnMDxXxZUo9Zwg2PS6WQLXy63JnnLmJFYxZZ",
-  collections: "6Gfz6beNCcP8P7vrMyN2AFtsuv8rkVszSJ8xoP4zQyaR,ACy3ZVXcch8mZXUtRVqsJfa2DhFHxnUJpBb4oeN9tZsX,BL8ocmGmaEiM73JYjAAhgAmHPbtuY3CThYem9g4N5PqQ,BTJPWLW7DLQWpm2TNNEByAM5a1E1AGJp4h43czo9YBLc,Cq2BNRoE5RqyqSmACDQLx4ivp3MgmePwd2mdroZ5hmom,H3mnaqNFFNwqRfEiWFsRTgprCvG4tYFfmNezGEVnaMuQ",
-  sellers: "7Z3LJB2rxV4LiRBwgwTcufAWxnFTVJpcoCMiCo8Z5Ere,2jcih7dUFmEQfMUXQQnL2Fkq9zMqj4jwpHqvRVe3gGLL",
-  enable_edit_sellers: true,
-  enable_edit_collections: true,
-  master_settings: true,
-  collections_display: true,
-  sellers_display: true,
-  solana_pay: config.solana_pay,
-  kiosk: config.kiosk
-}).catch(function(err){
+myshop.init(config).catch(function(err){
   console.log("shop failed to initialize");
   console.log(err);
 });

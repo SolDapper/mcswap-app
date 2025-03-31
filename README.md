@@ -35,10 +35,10 @@ Enable Kiosk Mode
 ```javascript
 config.kiosk = {
     touch: true, // is touch screen display
-    refresh: 60000 // refresh display every n miliseconds
+    refresh: 60000 // refresh display every n miliseconds if touchless display (ignored if touch is true)
 };
 ```
-*using kiosk requires you spin up a [mcswap-api](https://github.com/SolDapper/mcswap-api) to provide solana pay endpoints*
+*using kiosk requires you spin up a [mcswap-api](https://github.com/SolDapper/mcswap-api) to provide solana pay endpoints for your mcswap powered listings*
 
 **menu**
 
@@ -46,10 +46,13 @@ Add, Edit, Remove menu items:
 ```javascript
 {
     text: "Module", // button text
-    title: "McSwap Shop Repo", // tooltip
-    href: "https://github.com/SolDapper/mcswap-shop", // remote page
+    title: "McSwap API Repo", // tooltip
+    href: "https://github.com/SolDapper/mcswap-api", // remote page
 }
 ```
+
+**shop module config**
+For the rest of the config settings please refer to the [config docs for the integrated mcswap-shop npm module](https://github.com/SolDapper/mcswap-shop?tab=readme-ov-file#config-options).
 
 ## run locally
 ```html
