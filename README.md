@@ -54,6 +54,23 @@ Add, Edit, Remove menu items:
 **shop module config**
 For the rest of the config settings please refer to the [config docs for the integrated mcswap-shop npm module](https://github.com/SolDapper/mcswap-shop?tab=readme-ov-file#config-options).
 
+**sdfsdfsdf**
+Open src/index.html and update your metatags
+```html
+<!-- update these before live deployment -->
+<title>McSwap</title>
+<meta property="og:title" content="McSwap" />
+<meta name="twitter:title" content="McSwap" />
+<meta name="description" content="Digital Asset Ecommerce" />
+<meta property="og:description" content="Digital Asset Ecommerce" />
+<meta name="twitter:description" content="Digital Asset Ecommerce" />
+<meta property="og:url" content="https://www.mcswap.xyz" />
+<meta name="twitter:site" content="https://www.mcswap.xyz" />
+<meta name="twitter:creator" content="@SolDapper" />
+<meta name="twitter:image" content="link-to-remote-hosted-social-card-image" />
+<!-- update these before live deployment -->
+```
+
 ## run locally
 ```html
 npm start
