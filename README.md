@@ -24,7 +24,9 @@ PAY = https://your-mcswap-api.xyz
 
 ## config 
 Open src/config.js
+
 **kiosk** 
+
 Default Web Settings
 ```javascript
 config.kiosk = false;
