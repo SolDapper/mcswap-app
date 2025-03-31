@@ -8,6 +8,8 @@ import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css";
 import "./style.css";
 // ****************************************************
+
+// ****************************************************
 // mcswap connector
 import EventEmitter from 'events';
 const emitter = new EventEmitter();
@@ -25,59 +27,19 @@ import "mcswap-connector/src/colors/blue-connector.css";
 const _wallets_ = process.env.WALLETS;
 const wallets = _wallets_.split(",");
 new mcswapConnector(wallets,emitter).init();
+// ****************************************************
 
 // ****************************************************
 // app config
-const config = {};
-config.solana_pay = false;
-// config.solana_pay = process.env.PAY;
-config.kiosk = false;
-// config.kiosk = {
-//   touch: true,
-//   refresh: 60000
-// };
-config.menu = [
-  // {
-  //   text: "App",
-  //   title: "McSwap App Repo",
-  //   href: "https://github.com/SolDapper/mcswap-app",
-  // },
-  {
-    text: "Module",
-    title: "McSwap Shop Repo",
-    href: "https://github.com/SolDapper/mcswap-shop",
-  },
-  {
-    text: "Connector",
-    title: "McSwap Connector Repo",
-    href: "https://github.com/SolDapper/mcswap-connector",
-  },
-  {
-    text: "SDK",
-    title: "McSwap SDK Repo",
-    href: "https://github.com/SolDapper/mcswap-sdk",
-  },
-  {
-    text: "API",
-    title: "McSwap API Repo",
-    href: "https://github.com/SolDapper/mcswap-api",
-  },
-  {
-    title: "McSwap Discord",
-    href: "https://discord.gg/Z9bUEf8gYb",
-    img: "discord"
-  },
-  {
-    title: "McSwap X",
-    href: "https://x.com/mcswapshop",
-    img: "x"
-  }
-];
+import config from "./config.js";
+// ****************************************************
 
-// check for touchless display
+// ****************************************************
+// check for kiosk, hide top
 if(config.kiosk!=false){
   $("#banner, #mcswap-dapp-nav").hide();
 }
+// ****************************************************
 
 // ****************************************************
 // apply banner and menu
@@ -91,6 +53,7 @@ for(let i=0; i<config.menu.length; i++){
   $("#mcswap_menu_top").append("<a class='mcswap_menu_link' target='_blank' href='"+item.href+"' title='"+item.title+"'>"+item.img+item.text+"</a>");
   $("#mcswap_menu_drop").append("<a class='mcswap_menu_link' target='_blank' href='"+item.href+"' title='"+item.title+"'>"+item.img+item.text+"</a>");
 }
+// ****************************************************
 
 // ****************************************************
 // mobile menu open/close
@@ -104,9 +67,10 @@ $("#mcswap_menu_button").on("click", function(){
     $("#mcswap_menu_drop").show();
   }
 });
+// ****************************************************
 
 // ****************************************************
-// mobile menu button clicks
+// mobile clipboard clicks
 $("a.mcswap_menu_link, a#mcswap-solana-link").on("click", function(e){
   e.preventDefault();
   if(isMobile()){
@@ -116,6 +80,7 @@ $("a.mcswap_menu_link, a#mcswap-solana-link").on("click", function(e){
     window.open($(this).attr("href"),'_blank').focus();
   }
 });
+// ****************************************************
 
 // ****************************************************
 // mcswap shop
@@ -159,6 +124,7 @@ myshop.init({
   console.log("shop failed to initialize");
   console.log(err);
 });
+// ****************************************************
 
 // *****************************************************
 // clipboard
@@ -174,14 +140,10 @@ function copy(string){
   toast("Copied to Clipboard", 2000);
   return;
 }
-
-// *****************************************************
 // mobile check
 function isMobile(){
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
-
-// *****************************************************
 // toast
 function toast(message,wait,error=false){
   let color = "#111";
@@ -212,6 +174,7 @@ function toast(message,wait,error=false){
       onClick: function(){} // Callback after click
   }).showToast();
 }
+// ****************************************************
 
 // *****************************************************
 // intro
@@ -231,7 +194,9 @@ setTimeout(function(){
     },2400);
   },1800);
 },1800);
+// ****************************************************
 
 // *****************************************************
 // custom css
 import "./custom.css";
+// ****************************************************
