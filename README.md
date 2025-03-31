@@ -53,3 +53,6 @@ Add, Edit, Remove menu items:
 npm start
 ```
 Open your browser to: http://localhost:4400
+
+## styling
+You can add custom css rules in src/custom.css to overide styling for your app.
