@@ -29,6 +29,13 @@ new mcswapConnector(wallets,emitter).init();
 // ****************************************************
 // app config
 const config = {};
+config.solana_pay = false;
+// config.solana_pay = process.env.PAY;
+config.kiosk = false;
+// config.kiosk = {
+//   touch: true,
+//   refresh: 60000
+// };
 config.menu = [
   // {
   //   text: "App",
@@ -51,6 +58,11 @@ config.menu = [
     href: "https://github.com/SolDapper/mcswap-sdk",
   },
   {
+    text: "API",
+    title: "McSwap API Repo",
+    href: "https://github.com/SolDapper/mcswap-api",
+  },
+  {
     title: "McSwap Discord",
     href: "https://discord.gg/Z9bUEf8gYb",
     img: "discord"
@@ -61,6 +73,11 @@ config.menu = [
     img: "x"
   }
 ];
+
+// check for touchless display
+if(config.kiosk!=false){
+  $("#banner, #mcswap-dapp-nav").hide();
+}
 
 // ****************************************************
 // apply banner and menu
@@ -102,8 +119,8 @@ $("a.mcswap_menu_link, a#mcswap-solana-link").on("click", function(e){
 
 // ****************************************************
 // mcswap shop
-// import shop from "../plugin/mcswap-shop.js";
-import shop from "mcswap-shop";
+import shop from "../plugin/mcswap-shop.js";
+// import shop from "mcswap-shop";
 const myshop = new shop(process.env.RPC);
 myshop.init({
   id: "mcswap-shop",
@@ -136,6 +153,8 @@ myshop.init({
   master_settings: true,
   collections_display: true,
   sellers_display: true,
+  solana_pay: config.solana_pay,
+  kiosk: config.kiosk
 }).catch(function(err){
   console.log("shop failed to initialize");
   console.log(err);

@@ -15,6 +15,11 @@ RPC = https://staked.helius-rpc.com?api-key=YOUR_KEY_HERE
 WALLETS = phantom,solflare,backpack
 ```
 
+if you're running a solana pay api then also add:
+```html
+PAY = https://your-solana-pay-api.xyz
+```
+
 ## run locally
 ```html
 npm start
