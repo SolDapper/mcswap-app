@@ -17,7 +17,7 @@ WALLETS = phantom,solflare,backpack
 PAY = false
 ```
 
-If you're running a solana pay [mcswap-api](https://github.com/SolDapper/mcswap-api), replace false with your api entry point:
+If you're running the optional [mcswap-api](https://github.com/SolDapper/mcswap-api) to supply solana-pay endpoints, replace false with your api entry point:
 ```html
 PAY = https://your-mcswap-api.xyz
 ```
@@ -53,4 +53,3 @@ Add, Edit, Remove menu items:
 npm start
 ```
 Open your browser to: http://localhost:4400
-
