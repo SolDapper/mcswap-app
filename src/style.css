@@ -236,6 +236,9 @@ h1{
         display: block;
 
     }
+    #mcswap_menu_top a img, #mcswap_menu_drop a img {
+        margin-top: 15px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
