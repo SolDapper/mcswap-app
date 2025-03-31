@@ -41,6 +41,7 @@ config.kiosk = {
 *using kiosk requires you spin up a [mcswap-api](https://github.com/SolDapper/mcswap-api) to provide solana pay endpoints*
 
 **menu**
+
 Add, Edit, Remove menu items:
 ```javascript
 {
