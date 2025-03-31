@@ -52,9 +52,11 @@ Add, Edit, Remove menu items:
 ```
 
 **shop module config**
+
 For the rest of the config settings please refer to the [config docs for the integrated mcswap-shop npm module](https://github.com/SolDapper/mcswap-shop?tab=readme-ov-file#config-options).
 
 **metatags**
+
 Open src/index.html and update your metatags
 ```html
 <!-- update these before live deployment -->
