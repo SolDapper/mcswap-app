@@ -1,4 +1,5 @@
 # mcswap-app
+A copy of the mcswap.xyz website as a turn-key package integrated with everything mcswap. 
 
 ![powered by solana](https://repository-images.githubusercontent.com/944753274/1145e6b0-4ad7-4887-acf9-21b9d673a8fd)
 
@@ -8,20 +9,48 @@ git clone https://github.com/SolDapper/mcswap-app.git
 ```
 
 ## .env
-create a .env file in your project directory with the following details
+Create a .env file in your project directory with the following details
 ```html
 PORT = 4400
 RPC = https://staked.helius-rpc.com?api-key=YOUR_KEY_HERE
 WALLETS = phantom,solflare,backpack
+PAY = false
 ```
 
-if you're running a solana pay api then also add:
+If you're running a solana pay [mcswap-api](https://github.com/SolDapper/mcswap-api), replace false with your api entry point:
 ```html
-PAY = https://your-solana-pay-api.xyz
+PAY = https://your-mcswap-api.xyz
+```
+
+## config 
+Open src/config.js
+**kiosk** 
+Default Web Settings
+```javascript
+config.kiosk = false;
+```
+Enable Kiosk Mode
+```javascript
+config.kiosk = {
+    touch: true, // is touch screen display
+    refresh: 60000 // refresh display every n miliseconds
+};
+```
+*using kiosk requires you spin up a [mcswap-api](https://github.com/SolDapper/mcswap-api) to provide solana pay endpoints*
+
+**menu**
+Add, Edit, Remove menu items:
+```javascript
+{
+    text: "Module", // button text
+    title: "McSwap Shop Repo", // tooltip
+    href: "https://github.com/SolDapper/mcswap-shop", // remote page
+}
 ```
 
 ## run locally
 ```html
 npm start
 ```
-open your browser to: http://localhost:4400
+Open your browser to: http://localhost:4400
+

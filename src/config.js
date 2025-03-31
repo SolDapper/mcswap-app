@@ -1,10 +1,11 @@
 'use strict';
 import 'dotenv/config';
 const config = {};
-config.solana_pay = false;
-// config.solana_pay = process.env.PAY;
 config.kiosk = false;
-// config.kiosk = {touch:true,refresh:60000};
+// config.kiosk = {
+//   touch:true,
+//   refresh:60000
+// };
 config.menu = [
   // {
   //   text: "App",
@@ -42,4 +43,5 @@ config.menu = [
     img: "x"
   }
 ];
+config.solana_pay=process.env.PAY;
 export default config;
