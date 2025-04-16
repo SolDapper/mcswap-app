@@ -74,4 +74,9 @@ config.master_settings= true;
 config.collections_display= true;
 config.sellers_display= true;
 config.solana_pay=process.env.PAY;
+config.physicals = [
+  "Digital Asset",
+  "Phygital + Shipping",
+  "Phygital Pick-Up"
+];
 export default config;
