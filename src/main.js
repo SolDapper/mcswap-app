@@ -21,6 +21,7 @@ emitter.on('mcswap_disconnected',async()=>{
   $(".mcswap-item").removeClass("active");
   $(".mcswap-details-buy").prop("disabled", false);
   $(".mcswap-details-delist").prop("disabled", false).hide();
+  $("#mcswap-form-box, #mcswap-transaction-preview").remove();
 });
 import mcswapConnector from "mcswap-connector";
 import "mcswap-connector/src/colors/blue-connector.css";

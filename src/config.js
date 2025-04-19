@@ -7,11 +7,11 @@ config.kiosk = false;
 //   refresh: 60000
 // };
 config.menu = [
-  // {
-  //   text: "App",
-  //   title: "McSwap App Repo",
-  //   href: "https://github.com/SolDapper/mcswap-app",
-  // },
+  {
+    text: "Template",
+    title: "Phygital Retail Template",
+    href: "https://github.com/SolDapper/mcswap-app",
+  },
   {
     text: "Module",
     title: "McSwap Shop Repo",
@@ -32,11 +32,11 @@ config.menu = [
     title: "McSwap API Repo",
     href: "https://github.com/SolDapper/mcswap-api",
   },
-  {
-    title: "McSwap Discord",
-    href: "https://discord.gg/Z9bUEf8gYb",
-    img: "discord"
-  },
+  // {
+  //   title: "McSwap Discord",
+  //   href: "https://discord.gg/Z9bUEf8gYb",
+  //   img: "discord"
+  // },
   {
     title: "McSwap X",
     href: "https://x.com/mcswapshop",
@@ -73,10 +73,14 @@ config.enable_edit_collections= true;
 config.master_settings= true;
 config.collections_display= true;
 config.sellers_display= true;
-config.solana_pay=process.env.PAY;
+config.solana_pay= process.env.PAY;
+config.shipping = true;
+config.enable_edit_physical= true;
+config.default_physical= 0;
 config.physicals = [
   "Digital Asset",
   "Phygital + Shipping",
-  "Phygital Pick-Up"
+  "Phygital Pick-Up",
+  "Stationary Asset",
 ];
 export default config;
