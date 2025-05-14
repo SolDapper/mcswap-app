@@ -85,8 +85,8 @@ $("a.mcswap_menu_link, a#mcswap-solana-link").on("click", function(e){
 
 // ****************************************************
 // mcswap shop
-import shop from "../plugin/mcswap-shop.js";
-// import shop from "mcswap-shop";
+// import shop from "../plugin/mcswap-shop.js";
+import shop from "mcswap-shop";
 const myshop = new shop(process.env.RPC);
 myshop.init(config).catch(function(err){
   console.log("shop failed to initialize");
