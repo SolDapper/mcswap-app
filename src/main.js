@@ -146,9 +146,9 @@ function toast(message,wait,error=false){
 
 // *****************************************************
 // intro
-$("#intro-1").html("Phygital");
-$("#intro-2").html("Retail");
-$("#intro-3").html("Template");
+$("#intro-1").html("Trustless");
+$("#intro-2").html("Escrow");
+$("#intro-3").html("Protocol");
 setTimeout(function(){
   $("#intro-1").removeClass("animate__flipInY").addClass("animate__zoomOut");
   $("#intro-2").show();
